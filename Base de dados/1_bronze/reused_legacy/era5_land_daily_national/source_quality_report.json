@@ -1,0 +1,76 @@
+{
+  "dataset": "AquaCrop daily climate: ERA5-Land with Open-Meteo best-match fallbacks",
+  "model": "era5_land",
+  "attribution": "Open-Meteo / ERA5-Land; CC BY 4.0",
+  "start_date": "2024-10-08",
+  "end_date": "2026-10-07",
+  "rows": 48910,
+  "locations": 67,
+  "states": 27,
+  "macro_regions": [
+    "Centro-Oeste",
+    "Nordeste",
+    "Norte",
+    "Sudeste",
+    "Sul"
+  ],
+  "duplicate_keys_removed": 0,
+  "quality_flags": {
+    "VALID": 48910
+  },
+  "coverage": [
+    {
+      "variable": "tmax_c",
+      "unit": "°C",
+      "valid_rows": 48910,
+      "missing_rows": 0,
+      "coverage_pct": 100.0
+    },
+    {
+      "variable": "tmin_c",
+      "unit": "°C",
+      "valid_rows": 48910,
+      "missing_rows": 0,
+      "coverage_pct": 100.0
+    },
+    {
+      "variable": "eto_mm",
+      "unit": "mm/dia",
+      "valid_rows": 48910,
+      "missing_rows": 0,
+      "coverage_pct": 100.0
+    },
+    {
+      "variable": "soil_temp_shallow_c",
+      "unit": "°C",
+      "valid_rows": 48910,
+      "missing_rows": 0,
+      "coverage_pct": 100.0
+    },
+    {
+      "variable": "precipitation_mm",
+      "unit": "mm/dia",
+      "valid_rows": 48910,
+      "missing_rows": 0,
+      "coverage_pct": 100.0
+    }
+  ],
+  "daily_variables": {
+    "tmax_c": "°C",
+    "tmin_c": "°C",
+    "eto_mm": "mm/dia",
+    "soil_temp_shallow_c": "°C",
+    "soil_temperature_reference_depth": "0-7 cm",
+    "precipitation_mm": "mm/dia"
+  },
+  "source_model_by_variable": {
+    "tmax_c": "era5_land",
+    "tmin_c": "era5_land",
+    "soil_temp_shallow_c": "era5_land",
+    "eto_mm": "Open-Meteo API default (best match)",
+    "precipitation_mm": "Open-Meteo API default (best match)"
+  },
+  "eto_source_note": "The explicit ERA5-Land daily endpoint returned null ETo values. Existing valid ETo data for the same 67 locations was reused through 2026-09-30; only 2026-10-01 to 2026-10-07 was retrieved with the API default (best match). Raw fallback responses and provenance are in Bronze.",
+  "eto_fallback_manifest": "1_bronze/openmeteo_era5_land_daily/raw/eto_best_match/manifest.json",
+  "precipitation_source_note": "The explicit era5_land model returned null precipitation for validation coordinates. precipitation_sum was fetched with the Open-Meteo default model selection (best match); values and source provenance are recorded in Bronze and in precipitation_source_model."
+}

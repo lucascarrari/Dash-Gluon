@@ -1,0 +1,13 @@
+{
+  "model": "era5_land",
+  "api": "Open-Meteo Historical Weather API",
+  "variable": "et0_fao_evapotranspiration",
+  "canonical": "eto_mm",
+  "units": "mm/day",
+  "frequency": "daily",
+  "start_date": "2024-10-08",
+  "end_date": "2026-10-07",
+  "locations": 27,
+  "responses": 27,
+  "provenance": "explicit model parameter"
+}

@@ -1,0 +1,50 @@
+{
+  "batch_id": "eto_seamless_regional_batch_001",
+  "model": "era5_seamless",
+  "variable": "et0_fao_evapotranspiration",
+  "canonical": "eto_mm",
+  "start_date": "2024-10-08",
+  "end_date": "2026-10-07",
+  "points": [
+    {
+      "location_id": "BR_AC_RIO_BRANCO",
+      "status": 200,
+      "days": 730,
+      "valid": 730,
+      "nulls": 0,
+      "units": "mm",
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 5006.143,
+      "raw": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\1_bronze\\era5_seamless_eto\\raw\\BR_AC_RIO_BRANCO_2024-10-08_2026-10-07.json"
+    },
+    {
+      "location_id": "BR_AM_MANAUS",
+      "status": 200,
+      "days": 730,
+      "valid": 730,
+      "nulls": 0,
+      "units": "mm",
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4954.0,
+      "raw": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\1_bronze\\era5_seamless_eto\\raw\\BR_AM_MANAUS_2024-10-08_2026-10-07.json"
+    },
+    {
+      "location_id": "BR_AP_MACAPA",
+      "status": 200,
+      "days": 730,
+      "valid": 730,
+      "nulls": 0,
+      "units": "mm",
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4901.857,
+      "raw": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\1_bronze\\era5_seamless_eto\\raw\\BR_AP_MACAPA_2024-10-08_2026-10-07.json"
+    }
+  ],
+  "batch_estimated_calls": 156.42857142857144,
+  "retry_margin_units": 31.285714285714292,
+  "account_prior_usage": "unknown",
+  "timezone": "GMT"
+}

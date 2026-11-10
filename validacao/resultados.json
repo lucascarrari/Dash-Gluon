@@ -1,0 +1,559 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\User\\AppData\\Local\\AcquaCropDashboard\\venv\\Scripts\\python.exe",
+  "checks": [
+    {
+      "name": "dependencias",
+      "status": "ok",
+      "result": {
+        "pandas": "3.1.0",
+        "numpy": "2.5.4",
+        "streamlit": "1.66.1",
+        "pyarrow": "24.0.0",
+        "scipy": "1.18.1",
+        "shapely": "2.2.0",
+        "pyproj": "3.8.0",
+        "python-dotenv": "ausente neste ambiente",
+        "scikit-learn": "ausente neste ambiente",
+        "autogluon.tabular": "ausente neste ambiente",
+        "autogluon.timeseries": "ausente neste ambiente"
+      },
+      "seconds": 0.007
+    },
+    {
+      "name": "sintaxe",
+      "status": "ok",
+      "result": {
+        "arquivos_validos": 72
+      },
+      "seconds": 0.083
+    },
+    {
+      "name": "smoke_dashboard",
+      "status": "ok",
+      "result": {
+        "tests": 1,
+        "log": "test_configured_test_gold_is_discovered_and_loaded (test_dashboard_smoke.DashboardSmokeTests.test_configured_test_gold_is_discovered_and_loaded) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.015s\n\nOK\n"
+      },
+      "seconds": 1.192
+    },
+    {
+      "name": "leitura_seis_fontes_reais",
+      "status": "ok",
+      "result": [
+        {
+          "label": "ERA5-Land · Tmax/Tmin e solo diária · 67 localidades/27 UFs",
+          "path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\era5_land_daily_national\\tmax_tmin_soil_temp_era5_land_national.csv",
+          "linhas_carregadas": 48910,
+          "colunas": [
+            "date",
+            "location_id",
+            "location_name",
+            "state",
+            "macro_region",
+            "timezone",
+            "latitude",
+            "longitude",
+            "api_latitude",
+            "api_longitude",
+            "tmax_c",
+            "tmin_c",
+            "soil_temp_shallow_c",
+            "unit",
+            "source_model",
+            "source_file",
+            "quality_flag"
+          ],
+          "nulos": {},
+          "arquivos_csv": 1,
+          "periodo": {
+            "coluna": "date",
+            "inicio": "2024-10-08 00:00:00",
+            "fim": "2026-10-07 00:00:00",
+            "datas_invalidas": 0
+          },
+          "ids": {
+            "coluna": "location_id",
+            "quantidade": 67,
+            "duplicatas_id_data": 0
+          }
+        },
+        {
+          "label": "ERA5 · precipitação diária · 27 UFs",
+          "path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\era5\\precipitacao_diaria.csv",
+          "linhas_carregadas": 19710,
+          "colunas": [
+            "date",
+            "location_id",
+            "latitude",
+            "longitude",
+            "precipitation_mm",
+            "source_model",
+            "source_file",
+            "unit"
+          ],
+          "nulos": {},
+          "arquivos_csv": 1,
+          "periodo": {
+            "coluna": "date",
+            "inicio": "2024-10-08 00:00:00",
+            "fim": "2026-10-07 00:00:00",
+            "datas_invalidas": 0
+          },
+          "ids": {
+            "coluna": "location_id",
+            "quantidade": 27,
+            "duplicatas_id_data": 0
+          }
+        },
+        {
+          "label": "ERA5-Seamless · ETo diária parcial · 31 localidades/18 UFs",
+          "path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\regional\\era5_seamless\\eto_diaria_nacional_parcial.csv",
+          "linhas_carregadas": 22630,
+          "colunas": [
+            "date",
+            "location_id",
+            "location_name",
+            "state",
+            "macro_region",
+            "timezone",
+            "latitude",
+            "longitude",
+            "api_latitude",
+            "api_longitude",
+            "eto_mm",
+            "unit",
+            "source_model",
+            "source_file",
+            "quality_flag"
+          ],
+          "nulos": {},
+          "arquivos_csv": 1,
+          "periodo": {
+            "coluna": "date",
+            "inicio": "2024-10-08 00:00:00",
+            "fim": "2026-10-07 00:00:00",
+            "datas_invalidas": 0
+          },
+          "ids": {
+            "coluna": "location_id",
+            "quantidade": 31,
+            "duplicatas_id_data": 0
+          }
+        },
+        {
+          "label": "ERA5-Land · horária · produto Gold existente",
+          "path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\era5_land\\aquacrop_brasil_era5_land_horario.parquet",
+          "linhas_carregadas": 250000,
+          "colunas": [
+            "data",
+            "temperature_2m",
+            "dew_point_2m",
+            "relative_humidity_2m",
+            "vapour_pressure_deficit",
+            "soil_moisture_0_to_7cm",
+            "soil_moisture_7_to_28cm",
+            "soil_moisture_28_to_100cm",
+            "soil_moisture_100_to_255cm",
+            "soil_temperature_0_to_7cm",
+            "soil_temperature_7_to_28cm",
+            "soil_temperature_28_to_100cm",
+            "soil_temperature_100_to_255cm",
+            "snow_depth",
+            "location_id",
+            "location_name",
+            "state",
+            "macro_region",
+            "latitude",
+            "longitude",
+            "grid_id",
+            "api_latitude",
+            "api_longitude",
+            "elevation_m",
+            "source_model",
+            "source_file",
+            "quality_flag"
+          ],
+          "nulos": {},
+          "arquivos_csv": 0,
+          "periodo": {
+            "coluna": "data",
+            "inicio": "2024-10-08 00:00:00+00:00",
+            "fim": "2026-10-07 23:00:00+00:00",
+            "datas_invalidas": 0
+          },
+          "ids": {
+            "coluna": "location_id",
+            "quantidade": 15,
+            "duplicatas_id_data": 0
+          }
+        },
+        {
+          "label": "ERA5 · horária Norte/Centro-Oeste · 24 localidades",
+          "path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\regional\\era5_hourly\\era5_horario_norte_centro_oeste.csv",
+          "linhas_carregadas": 250000,
+          "colunas": [
+            "timestamp_utc",
+            "location_id",
+            "location_name",
+            "state",
+            "macro_region",
+            "timezone",
+            "latitude",
+            "longitude",
+            "api_latitude",
+            "api_longitude",
+            "elevation_m",
+            "temperature_2m",
+            "dew_point_2m",
+            "relative_humidity_2m",
+            "vapour_pressure_deficit",
+            "soil_moisture_0_to_7cm",
+            "soil_moisture_7_to_28cm",
+            "soil_moisture_28_to_100cm",
+            "soil_moisture_100_to_255cm",
+            "soil_temperature_0_to_7cm",
+            "soil_temperature_7_to_28cm",
+            "soil_temperature_28_to_100cm",
+            "soil_temperature_100_to_255cm",
+            "source_model",
+            "source_file",
+            "quality_flag"
+          ],
+          "nulos": {},
+          "arquivos_csv": 1,
+          "periodo": {
+            "coluna": "timestamp_utc",
+            "inicio": "2024-10-08 00:00:00+00:00",
+            "fim": "2026-10-07 23:00:00+00:00",
+            "datas_invalidas": 0
+          },
+          "ids": {
+            "coluna": "location_id",
+            "quantidade": 15,
+            "duplicatas_id_data": 0
+          }
+        },
+        {
+          "label": "ERA5 · horária expansão · 16 localidades",
+          "path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\regional\\era5_hourly_national_expansion",
+          "linhas_carregadas": 250000,
+          "colunas": [
+            "timestamp_utc",
+            "location_id",
+            "location_name",
+            "state",
+            "macro_region",
+            "timezone",
+            "latitude",
+            "longitude",
+            "api_latitude",
+            "api_longitude",
+            "elevation_m",
+            "temperature_2m",
+            "dew_point_2m",
+            "relative_humidity_2m",
+            "vapour_pressure_deficit",
+            "soil_moisture_0_to_7cm",
+            "soil_moisture_7_to_28cm",
+            "soil_moisture_28_to_100cm",
+            "soil_moisture_100_to_255cm",
+            "soil_temperature_0_to_7cm",
+            "soil_temperature_7_to_28cm",
+            "soil_temperature_28_to_100cm",
+            "soil_temperature_100_to_255cm",
+            "source_model",
+            "source_file",
+            "quality_flag"
+          ],
+          "nulos": {},
+          "arquivos_csv": 16,
+          "periodo": {
+            "coluna": "timestamp_utc",
+            "inicio": "2024-10-08 00:00:00+00:00",
+            "fim": "2026-10-07 23:00:00+00:00",
+            "datas_invalidas": 0
+          },
+          "ids": {
+            "coluna": "location_id",
+            "quantidade": 15,
+            "duplicatas_id_data": 0
+          },
+          "linhas_totais_csv": 280320,
+          "ids_carregados": {
+            "location_id": [
+              "BR_AL_MACEIO",
+              "BR_BA_BARREIRAS",
+              "BR_CE_FORTALEZA",
+              "BR_ES_LINHARES",
+              "BR_MA_BALSAS",
+              "BR_MG_MONTES_CLAROS",
+              "BR_PB_JOAO_PESSOA",
+              "BR_PE_PETROLINA",
+              "BR_PI_URUCUI",
+              "BR_PR_LONDRINA",
+              "BR_RJ_CAMPOS_GOYTACAZES",
+              "BR_RN_MOSSORO",
+              "BR_RS_PASSO_FUNDO",
+              "BR_SC_CHAPECO",
+              "BR_SE_ARACAJU"
+            ]
+          }
+        }
+      ],
+      "seconds": 2.198
+    },
+    {
+      "name": "tres_treinos_rapidos_via_worker_real",
+      "status": "ok",
+      "result": [
+        {
+          "run_id": "c8abbb075bfc",
+          "task_type": "tabular",
+          "target": "eto_mm",
+          "status": "failed",
+          "created_at": "2026-11-10T13:27:42.057327+00:00",
+          "started_at": "2026-11-10T13:27:42.069324+00:00",
+          "finished_at": "2026-11-10T13:27:42.132215+00:00",
+          "duration_seconds": 0.07,
+          "leaderboard_path": null,
+          "predictions_path": null,
+          "model_path": null,
+          "error": "RuntimeError: Falha durante o treinamento do modelo SoilFrame.",
+          "options": {
+            "task_type": "tabular",
+            "target": "eto_mm",
+            "problem_type": "regression",
+            "validation_strategy": "temporal",
+            "time_limit": 15,
+            "preset": "medium_quality",
+            "date_column": "date",
+            "source_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\regional\\era5_seamless\\eto_diaria_nacional_parcial.csv",
+            "random_state": 42,
+            "dataset_snapshot": {
+              "source_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\regional\\era5_seamless\\eto_diaria_nacional_parcial.csv",
+              "source_table": null,
+              "source_label": null,
+              "rows": 1200,
+              "columns": [
+                "date",
+                "location_id",
+                "location_name",
+                "state",
+                "macro_region",
+                "timezone",
+                "latitude",
+                "longitude",
+                "api_latitude",
+                "api_longitude",
+                "eto_mm",
+                "unit",
+                "source_model",
+                "source_file",
+                "quality_flag"
+              ],
+              "fingerprint_sha256": "77eb9e42939d6379d16eb16955db3c6d72acfdeb7f864ebc0da1d32189d3f833"
+            }
+          },
+          "metrics": {}
+        },
+        {
+          "run_id": "f62f555942c5",
+          "task_type": "tabular",
+          "target": "classe_teste_auditoria",
+          "status": "failed",
+          "created_at": "2026-11-10T13:27:42.069324+00:00",
+          "started_at": "2026-11-10T13:27:42.136847+00:00",
+          "finished_at": "2026-11-10T13:27:42.136847+00:00",
+          "duration_seconds": 0.01,
+          "leaderboard_path": null,
+          "predictions_path": null,
+          "model_path": null,
+          "error": "RuntimeError: Falha durante o treinamento do modelo SoilFrame.",
+          "options": {
+            "task_type": "tabular",
+            "target": "classe_teste_auditoria",
+            "problem_type": "binary",
+            "validation_strategy": "temporal",
+            "time_limit": 15,
+            "preset": "medium_quality",
+            "date_column": "date",
+            "source_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\regional\\era5_seamless\\eto_diaria_nacional_parcial.csv",
+            "random_state": 42,
+            "dataset_snapshot": {
+              "source_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\regional\\era5_seamless\\eto_diaria_nacional_parcial.csv",
+              "source_table": null,
+              "source_label": null,
+              "rows": 1200,
+              "columns": [
+                "date",
+                "location_id",
+                "location_name",
+                "state",
+                "macro_region",
+                "timezone",
+                "latitude",
+                "longitude",
+                "api_latitude",
+                "api_longitude",
+                "eto_mm",
+                "unit",
+                "source_model",
+                "source_file",
+                "quality_flag",
+                "classe_teste_auditoria"
+              ],
+              "fingerprint_sha256": "fbd6dd1bb0076a2dfc06c7cb0be8c78cbd2eb9671ffa0212fdaf92ad01c48233"
+            }
+          },
+          "metrics": {}
+        },
+        {
+          "run_id": "abfa37ce4356",
+          "task_type": "timeseries",
+          "target": "eto_mm",
+          "status": "failed",
+          "created_at": "2026-11-10T13:27:42.091476+00:00",
+          "started_at": "2026-11-10T13:27:42.154961+00:00",
+          "finished_at": "2026-11-10T13:27:42.154961+00:00",
+          "duration_seconds": 0.01,
+          "leaderboard_path": null,
+          "predictions_path": null,
+          "model_path": null,
+          "error": "ImportError: TimeSeriesPredictor não está instalado; instale o extra AutoGluon TimeSeries.",
+          "options": {
+            "task_type": "timeseries",
+            "target": "eto_mm",
+            "time_limit": 15,
+            "preset": "fast_training",
+            "prediction_length": 3,
+            "item_id_column": "location_id",
+            "timestamp_column": "date",
+            "frequency": "D",
+            "source_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\regional\\era5_seamless\\eto_diaria_nacional_parcial.csv",
+            "dataset_snapshot": {
+              "source_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\Base de dados\\3_ouro\\regional\\era5_seamless\\eto_diaria_nacional_parcial.csv",
+              "source_table": null,
+              "source_label": null,
+              "rows": 1200,
+              "columns": [
+                "date",
+                "location_id",
+                "location_name",
+                "state",
+                "macro_region",
+                "timezone",
+                "latitude",
+                "longitude",
+                "api_latitude",
+                "api_longitude",
+                "eto_mm",
+                "unit",
+                "source_model",
+                "source_file",
+                "quality_flag",
+                "classe_teste_auditoria"
+              ],
+              "fingerprint_sha256": "fbd6dd1bb0076a2dfc06c7cb0be8c78cbd2eb9671ffa0212fdaf92ad01c48233"
+            }
+          },
+          "metrics": {}
+        }
+      ],
+      "seconds": 0.138
+    },
+    {
+      "name": "app_sem_dotenv_instalado",
+      "status": "ok",
+      "result": {
+        "exceptions": [
+          "No module named 'dotenv'"
+        ],
+        "warnings": [],
+        "title": []
+      },
+      "seconds": 0.269
+    },
+    {
+      "name": "oito_paginas_com_dotenv_local",
+      "status": "ok",
+      "result": [
+        {
+          "page": "app.py / overview",
+          "exceptions": [],
+          "warnings": [],
+          "errors": [],
+          "dataframes": 2
+        },
+        {
+          "page": "pages/data_explorer.py",
+          "exceptions": [],
+          "warnings": [],
+          "errors": [],
+          "dataframes": 2
+        },
+        {
+          "page": "pages/gold_map.py",
+          "exceptions": [],
+          "warnings": [],
+          "errors": [
+            "Não foi possível identificar os pontos da camada Gold: Não foi possível consultar os dados geográficos do IBGE: <urlopen error [WinError 10013] Foi feita uma tentativa de acesso a um soquete de uma maneira que é proibida pelas permissões de acesso>"
+          ],
+          "dataframes": 0
+        },
+        {
+          "page": "pages/training.py",
+          "exceptions": [],
+          "warnings": [
+            "O AutoGluon Tabular não está instalado. Instale `requirements-automl.txt` para habilitar treinamento."
+          ],
+          "errors": [],
+          "dataframes": 0
+        },
+        {
+          "page": "pages/predictions.py",
+          "exceptions": [],
+          "warnings": [],
+          "errors": [],
+          "dataframes": 1
+        },
+        {
+          "page": "pages/model_accuracy.py",
+          "exceptions": [
+            "No module named 'sklearn'"
+          ],
+          "warnings": [],
+          "errors": [],
+          "dataframes": 0
+        },
+        {
+          "page": "pages/experiments.py",
+          "exceptions": [],
+          "warnings": [],
+          "errors": [],
+          "dataframes": 3
+        },
+        {
+          "page": "pages/pipeline_control.py",
+          "exceptions": [],
+          "warnings": [
+            "Esta ação pode consultar fontes externas e levar vários minutos. Os arquivos serão gravados em `soilframe-dashboard/outputs/lakehouse`."
+          ],
+          "errors": [],
+          "dataframes": 0
+        }
+      ],
+      "seconds": 2.966
+    },
+    {
+      "name": "servidor_http_real",
+      "status": "ok",
+      "result": {
+        "health": "ok",
+        "http_status": 200,
+        "port": 8517
+      },
+      "seconds": 1.535
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+﻿{
+    "endpoint":  "/v1/archive",
+    "models":  "era5",
+    "location_id":  "BR_PI_URUCUI",
+    "location_name":  "Uruçuí (MATOPIBA)",
+    "state":  "PI",
+    "macro_region":  "Nordeste",
+    "requested_latitude":  -7.2289,
+    "requested_longitude":  -44.5561,
+    "returned_latitude":  -7.25,
+    "returned_longitude":  -44.5,
+    "start_date":  "2024-10-08",
+    "end_date":  "2026-10-07",
+    "timezone":  "GMT",
+    "http_status":  200,
+    "fields":  [
+                   "temperature_2m",
+                   "dew_point_2m",
+                   "relative_humidity_2m",
+                   "vapour_pressure_deficit",
+                   "soil_moisture_0_to_7cm",
+                   "soil_moisture_7_to_28cm",
+                   "soil_moisture_28_to_100cm",
+                   "soil_moisture_100_to_255cm",
+                   "soil_temperature_0_to_7cm",
+                   "soil_temperature_7_to_28cm",
+                   "soil_temperature_28_to_100cm",
+                   "soil_temperature_100_to_255cm"
+               ],
+    "hour_count":  17520,
+    "first_timestamp":  "2024-10-08T00:00",
+    "last_timestamp":  "2026-10-07T23:00",
+    "hourly_units":  {
+                         "time":  "iso8601",
+                         "temperature_2m":  "°C",
+                         "dew_point_2m":  "°C",
+                         "relative_humidity_2m":  "%",
+                         "vapour_pressure_deficit":  "kPa",
+                         "soil_moisture_0_to_7cm":  "m³/m³",
+                         "soil_moisture_7_to_28cm":  "m³/m³",
+                         "soil_moisture_28_to_100cm":  "m³/m³",
+                         "soil_moisture_100_to_255cm":  "m³/m³",
+                         "soil_temperature_0_to_7cm":  "°C",
+                         "soil_temperature_7_to_28cm":  "°C",
+                         "soil_temperature_28_to_100cm":  "°C",
+                         "soil_temperature_100_to_255cm":  "°C"
+                     },
+    "missing_fields":  [
+
+                       ],
+    "wrong_length_fields":  [
+
+                            ],
+    "null_fields":  [
+
+                    ],
+    "wrong_units":  [
+
+                    ],
+    "validation_status":  "valid",
+    "estimated_calls":  62.571428571428569,
+    "retry_margin_reserved":  12.514285714285714,
+    "raw_file":  "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\1_bronze\\era5\\variables_horarias\\raw\\national_expansion\\BR_PI_URUCUI_2024-10-08_2026-10-07.json"
+}

@@ -1,0 +1,247 @@
+{
+  "dataset": "Open-Meteo Historical Weather API / ERA5-Land hourly (reused)",
+  "model": "era5_land",
+  "api_url": "https://archive-api.open-meteo.com/v1/archive",
+  "models_parameter": "era5_land",
+  "start_date": "2024-10-08",
+  "end_date": "2026-10-07",
+  "temporal_resolution": "hourly",
+  "timezone": "GMT/UTC",
+  "cell_selection": "land",
+  "variables": [
+    "temperature_2m",
+    "dew_point_2m",
+    "relative_humidity_2m",
+    "vapour_pressure_deficit",
+    "soil_moisture_0_to_7cm",
+    "soil_moisture_7_to_28cm",
+    "soil_moisture_28_to_100cm",
+    "soil_moisture_100_to_255cm",
+    "soil_temperature_0_to_7cm",
+    "soil_temperature_7_to_28cm",
+    "soil_temperature_28_to_100cm",
+    "soil_temperature_100_to_255cm",
+    "snow_depth"
+  ],
+  "units": {
+    "temperature_2m": "°C",
+    "dew_point_2m": "°C",
+    "relative_humidity_2m": "%",
+    "vapour_pressure_deficit": "kPa",
+    "soil_moisture_0_to_7cm": "m³/m³",
+    "soil_moisture_7_to_28cm": "m³/m³",
+    "soil_moisture_28_to_100cm": "m³/m³",
+    "soil_moisture_100_to_255cm": "m³/m³",
+    "soil_temperature_0_to_7cm": "°C",
+    "soil_temperature_7_to_28cm": "°C",
+    "soil_temperature_28_to_100cm": "°C",
+    "soil_temperature_100_to_255cm": "°C",
+    "snow_depth": "m"
+  },
+  "location_count": 24,
+  "state_count": 11,
+  "locations": [
+    {
+      "location_id": "BR_AC_CRUZEIRO_DO_SUL",
+      "location_name": "Cruzeiro do Sul",
+      "state": "AC",
+      "macro_region": "Norte",
+      "latitude": -7.6311,
+      "longitude": -72.6703
+    },
+    {
+      "location_id": "BR_AC_RIO_BRANCO",
+      "location_name": "Rio Branco",
+      "state": "AC",
+      "macro_region": "Norte",
+      "latitude": -9.9753,
+      "longitude": -67.8249
+    },
+    {
+      "location_id": "BR_AM_MANAUS",
+      "location_name": "Manaus",
+      "state": "AM",
+      "macro_region": "Norte",
+      "latitude": -3.119,
+      "longitude": -60.0217
+    },
+    {
+      "location_id": "BR_AP_MACAPA",
+      "location_name": "Macapá",
+      "state": "AP",
+      "macro_region": "Norte",
+      "latitude": 0.0349,
+      "longitude": -51.0694
+    },
+    {
+      "location_id": "BR_DF_BRASILIA",
+      "location_name": "Brasília (Capital Federal)",
+      "state": "DF",
+      "macro_region": "Centro-Oeste",
+      "latitude": -15.7801,
+      "longitude": -47.9292
+    },
+    {
+      "location_id": "BR_GO_CRISTALINA",
+      "location_name": "Cristalina (Polo Irrigação Pivô Central)",
+      "state": "GO",
+      "macro_region": "Centro-Oeste",
+      "latitude": -16.7686,
+      "longitude": -47.6136
+    },
+    {
+      "location_id": "BR_GO_GOIANIA",
+      "location_name": "Goiânia",
+      "state": "GO",
+      "macro_region": "Centro-Oeste",
+      "latitude": -16.6869,
+      "longitude": -49.2648
+    },
+    {
+      "location_id": "BR_GO_RIO_VERDE",
+      "location_name": "Rio Verde (Sudoeste Goiano)",
+      "state": "GO",
+      "macro_region": "Centro-Oeste",
+      "latitude": -17.7925,
+      "longitude": -50.9192
+    },
+    {
+      "location_id": "BR_MS_CAMPO_GRANDE",
+      "location_name": "Campo Grande",
+      "state": "MS",
+      "macro_region": "Centro-Oeste",
+      "latitude": -20.4697,
+      "longitude": -54.6201
+    },
+    {
+      "location_id": "BR_MS_CORUMBA",
+      "location_name": "Corumbá (Pantanal)",
+      "state": "MS",
+      "macro_region": "Centro-Oeste",
+      "latitude": -19.0094,
+      "longitude": -57.6533
+    },
+    {
+      "location_id": "BR_MS_DOURADOS",
+      "location_name": "Dourados (Polo Agro)",
+      "state": "MS",
+      "macro_region": "Centro-Oeste",
+      "latitude": -22.2211,
+      "longitude": -54.8056
+    },
+    {
+      "location_id": "BR_MT_CUIABA",
+      "location_name": "Cuiabá",
+      "state": "MT",
+      "macro_region": "Centro-Oeste",
+      "latitude": -15.6014,
+      "longitude": -56.0979
+    },
+    {
+      "location_id": "BR_MT_RONDONOPOLIS",
+      "location_name": "Rondonópolis (Polo Agro)",
+      "state": "MT",
+      "macro_region": "Centro-Oeste",
+      "latitude": -16.4674,
+      "longitude": -54.6372
+    },
+    {
+      "location_id": "BR_MT_SAPEZAL",
+      "location_name": "Sapezal (Chapadão Parecis)",
+      "state": "MT",
+      "macro_region": "Centro-Oeste",
+      "latitude": -12.9917,
+      "longitude": -58.7656
+    },
+    {
+      "location_id": "BR_MT_SINOP",
+      "location_name": "Sinop (Norte do MT)",
+      "state": "MT",
+      "macro_region": "Centro-Oeste",
+      "latitude": -11.8608,
+      "longitude": -55.5097
+    },
+    {
+      "location_id": "BR_MT_SORRISO",
+      "location_name": "Sorriso (Capital do Agronegócio)",
+      "state": "MT",
+      "macro_region": "Centro-Oeste",
+      "latitude": -12.5428,
+      "longitude": -55.7214
+    },
+    {
+      "location_id": "BR_PA_BELEM",
+      "location_name": "Belém",
+      "state": "PA",
+      "macro_region": "Norte",
+      "latitude": -1.4558,
+      "longitude": -48.4902
+    },
+    {
+      "location_id": "BR_PA_PARAGOMINAS",
+      "location_name": "Paragominas (Polo Agro)",
+      "state": "PA",
+      "macro_region": "Norte",
+      "latitude": -2.9986,
+      "longitude": -47.3533
+    },
+    {
+      "location_id": "BR_PA_SANTAREM",
+      "location_name": "Santarém",
+      "state": "PA",
+      "macro_region": "Norte",
+      "latitude": -2.4431,
+      "longitude": -54.7083
+    },
+    {
+      "location_id": "BR_RO_PORTO_VELHO",
+      "location_name": "Porto Velho",
+      "state": "RO",
+      "macro_region": "Norte",
+      "latitude": -8.7619,
+      "longitude": -63.9039
+    },
+    {
+      "location_id": "BR_RO_VILHENA",
+      "location_name": "Vilhena (Polo Agro)",
+      "state": "RO",
+      "macro_region": "Norte",
+      "latitude": -12.7406,
+      "longitude": -60.1458
+    },
+    {
+      "location_id": "BR_RR_BOA_VISTA",
+      "location_name": "Boa Vista",
+      "state": "RR",
+      "macro_region": "Norte",
+      "latitude": 2.8235,
+      "longitude": -60.6758
+    },
+    {
+      "location_id": "BR_TO_GURUPI",
+      "location_name": "Gurupi (Polo Agro)",
+      "state": "TO",
+      "macro_region": "Norte",
+      "latitude": -11.7297,
+      "longitude": -49.0678
+    },
+    {
+      "location_id": "BR_TO_PALMAS",
+      "location_name": "Palmas",
+      "state": "TO",
+      "macro_region": "Norte",
+      "latitude": -10.2491,
+      "longitude": -48.3243
+    }
+  ],
+  "source_run_manifest": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\DataLake Acquacrop\\1_bronze\\openmeteo_era5_land\\run_manifest.json",
+  "source_gold_file": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\DataLake Acquacrop\\3_ouro\\openmeteo_era5_land\\aquacrop_brasil_era5_land_horario.parquet",
+  "target_gold_file": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\3_ouro\\era5_land\\aquacrop_brasil_era5_land_horario.parquet",
+  "source_raw_directory": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\DataLake Acquacrop\\1_bronze\\openmeteo_era5_land\\raw",
+  "source_manifest_target": "1_bronze/era5_land/hourly_reused/run_manifest_origem.json",
+  "rows_in_regional_slice": 420480.0,
+  "valid_rows_in_regional_slice": 420480.0,
+  "reuse_cost_today": 0,
+  "api_calls_today": 0,
+  "reuse_note": "Bronze raw remains preserved in read-only source Lake; target contains source run manifest and a copy of the full ERA5-Land Gold table. This coverage view identifies regional points; no new model values were generated."
+}

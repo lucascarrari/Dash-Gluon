@@ -1,0 +1,38 @@
+{
+  "batch_id": "eto_seamless_regional_batch_007",
+  "model": "era5_seamless",
+  "variable": "et0_fao_evapotranspiration",
+  "period": "2024-10-08/2026-10-07",
+  "points": [
+    {
+      "location_id": "BR_RO_PORTO_VELHO",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4067.571
+    },
+    {
+      "location_id": "BR_RO_VILHENA",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4015.429
+    },
+    {
+      "location_id": "BR_RR_BOA_VISTA",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 3963.286
+    }
+  ],
+  "estimated_calls": 156.42857142857144,
+  "retry_margin_units": 31.285714285714292,
+  "timezone": "GMT"
+}

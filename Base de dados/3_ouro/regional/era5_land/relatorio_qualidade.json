@@ -1,0 +1,41 @@
+{
+  "model": "era5_land",
+  "period": "2024-10-08/2026-10-07",
+  "temporal_resolution": "hourly",
+  "locations": 24,
+  "states": 11,
+  "expected_rows": 420480,
+  "valid_rows": 420480.0,
+  "first_timestamp": "2024-10-08 00:00:00+00:00",
+  "last_timestamp": "2026-10-07 23:00:00+00:00",
+  "variables": [
+    "temperature_2m",
+    "dew_point_2m",
+    "relative_humidity_2m",
+    "vapour_pressure_deficit",
+    "soil_moisture_0_to_7cm",
+    "soil_moisture_7_to_28cm",
+    "soil_moisture_28_to_100cm",
+    "soil_moisture_100_to_255cm",
+    "soil_temperature_0_to_7cm",
+    "soil_temperature_7_to_28cm",
+    "soil_temperature_28_to_100cm",
+    "soil_temperature_100_to_255cm",
+    "snow_depth"
+  ],
+  "unavailable_combinations": [
+    {
+      "model": "era5_land",
+      "reason": "Expected unsupported field in ERA5-Land.",
+      "field": "precipitation"
+    },
+    {
+      "model": "era5_land",
+      "reason": "Expected unsupported field in ERA5-Land.",
+      "field": "solar_radiation"
+    }
+  ],
+  "spatial_limitation": "Discrete locations in 11 UFs; no continuous state or national coverage claim.",
+  "source_manifest": "Open-Meteo Historical Weather API / ERA5-Land",
+  "reuse_cost_today": 0
+}

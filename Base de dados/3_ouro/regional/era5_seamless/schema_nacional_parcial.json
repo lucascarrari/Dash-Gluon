@@ -1,0 +1,40 @@
+{
+  "dataset": "ERA5-Seamless partial national daily ETo",
+  "columns": [
+    "date",
+    "location_id",
+    "location_name",
+    "state",
+    "macro_region",
+    "timezone",
+    "latitude",
+    "longitude",
+    "api_latitude",
+    "api_longitude",
+    "eto_mm",
+    "unit",
+    "source_model",
+    "source_file",
+    "quality_flag"
+  ],
+  "units": {
+    "longitude": "degrees_east",
+    "latitude": "degrees_north",
+    "eto_mm": "mm/day"
+  },
+  "frequency": "daily",
+  "source_model_by_variable": {
+    "eto_mm": "era5_seamless"
+  },
+  "period": {
+    "start": "2024-10-08",
+    "end": "2026-10-07",
+    "days": 730
+  },
+  "location_count": 31,
+  "state_count": 18,
+  "row_count": 22630,
+  "timezone": "GMT",
+  "temporal_boundary": "Daily periods in GMT (UTC)",
+  "spatial_scope": "Discrete named points; not continuous state or national coverage."
+}

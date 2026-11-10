@@ -1,0 +1,46 @@
+{
+  "batch_id": "precip_era5_regional_batch_001",
+  "model": "era5",
+  "models_parameter": "era5",
+  "variable": "precipitation_sum",
+  "canonical": "precipitation_mm",
+  "timezone": "GMT",
+  "period": "2024-10-08/2026-10-07",
+  "points": [
+    {
+      "location_id": "BR_AC_RIO_BRANCO",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "days": 730,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 3803.857
+    },
+    {
+      "location_id": "BR_GO_GOIANIA",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "days": 730,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 3751.714
+    },
+    {
+      "location_id": "BR_GO_RIO_VERDE",
+      "http_status": 200,
+      "content_type": "application/json; charset=utf-8",
+      "days": 730,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 3699.571
+    }
+  ],
+  "estimated_billed_calls": 156.42857142857144,
+  "retry_margin_units": 31.285714285714292
+}

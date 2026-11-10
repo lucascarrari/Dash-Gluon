@@ -1,0 +1,43 @@
+{
+  "dataset": "ERA5-Land daily national reused subset",
+  "source_model_by_variable": {
+    "tmax_c": "era5_land",
+    "tmin_c": "era5_land",
+    "soil_temp_shallow_c": "era5_land"
+  },
+  "api_variables": {
+    "tmax_c": "temperature_2m_max",
+    "tmin_c": "temperature_2m_min",
+    "soil_temp_shallow_c": "soil_temperature_0_to_7cm_mean"
+  },
+  "units": {
+    "tmax_c": "°C",
+    "tmin_c": "°C",
+    "soil_temp_shallow_c": "°C"
+  },
+  "soil_depth": "0-7 cm",
+  "frequency": "daily",
+  "period": {
+    "start": "2024-10-08",
+    "end": "2026-10-07",
+    "days": 730
+  },
+  "timezone_semantics": "auto/local timezone per coordinate as returned",
+  "locations": 67,
+  "states": 27,
+  "regions": [
+    "Centro-Oeste",
+    "Nordeste",
+    "Norte",
+    "Sudeste",
+    "Sul"
+  ],
+  "rows": 48910,
+  "null_values": 0,
+  "source_manifest": "Lake antigo/1_bronze/openmeteo_era5_land_daily/run_manifest.json",
+  "source_quality_report": "Lake antigo/3_ouro/openmeteo_era5_land_daily/relatorio_qualidade_diario.json",
+  "excluded_variables": {
+    "precipitation_mm": "excluded: best_match provenance",
+    "eto_mm": "excluded: best_match provenance"
+  }
+}

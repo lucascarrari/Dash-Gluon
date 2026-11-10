@@ -1,0 +1,34 @@
+{
+  "dataset": "ERA5 regional daily precipitation",
+  "columns": [
+    "date",
+    "location_id",
+    "state",
+    "macro_region",
+    "timezone",
+    "latitude",
+    "longitude",
+    "precipitation_mm",
+    "unit",
+    "source_model",
+    "source_file",
+    "quality_flag"
+  ],
+  "units": {
+    "latitude": "degrees_north",
+    "precipitation_mm": "mm/day",
+    "longitude": "degrees_east"
+  },
+  "frequency": "daily",
+  "source_model_by_variable": {
+    "precipitation_mm": "era5"
+  },
+  "period": {
+    "start": "2024-10-08",
+    "end": "2026-10-07",
+    "days": 730
+  },
+  "location_count": 24,
+  "row_count": 17520,
+  "timezone": "GMT"
+}

@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Ambientes virtuais
+.venv/
+venv/
+ENV/
+env/
+
+# Modelos treinados e checkpoints binários (> 100MB / binários ML)
+*.pkl
+*.pickle
+*.joblib
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+
+# Logs
+*.log
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+
+# IDEs e Sistema Operacional
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Test caches e backups
+.pytest_cache/
+*.git_submodule_backup/
+.git_submodule_backup/
+
+# Dados locais pesados e lakehouse em soilframe
+soilframe/data/lakehouse/
+soilframe/data/era5land/
+soilframe/data/lst_nc/
+soilframe/data/swi_nc/
+soilframe/data/et0_nc/
+soilframe/outputs/models/*
+soilframe/outputs/predictions/*
+soilframe/outputs/figures/*
+soilframe/outputs/frames/*
+soilframe/outputs/animations/*
+soilframe/outputs/tables/*
+

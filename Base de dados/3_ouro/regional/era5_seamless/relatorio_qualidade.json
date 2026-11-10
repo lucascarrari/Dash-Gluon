@@ -1,0 +1,26 @@
+{
+  "dataset": "eto_diaria_norte_centro_oeste",
+  "model": "era5_seamless",
+  "period": "2024-10-08/2026-10-07",
+  "locations": 24,
+  "states": 11,
+  "rows": 17520,
+  "expected_rows": 17520,
+  "valid_values": 17520,
+  "null_values": 0,
+  "duplicate_location_dates": 0,
+  "unit": "mm/day",
+  "frequency": "daily",
+  "validation_status": "complete",
+  "pilot_steps": [
+    "1-day valid",
+    "14-day valid",
+    "90-day valid",
+    "730-day valid at validation point"
+  ],
+  "http_status": 200,
+  "all_returned_values_valid": true,
+  "gap_note": "ERA5-Land ETo remains an expected pending/null field in its separate product; this Seamless ETo product is not substituted into ERA5-Land.",
+  "spatial_scope": "Discrete named points; not continuous state or national coverage.",
+  "timezone": "GMT"
+}

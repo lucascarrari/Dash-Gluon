@@ -1,0 +1,12 @@
+{
+  "model": "era5_seamless",
+  "location_id": "BR_AC_CRUZEIRO_DO_SUL",
+  "date": "2026-10-01",
+  "api_variable": "et0_fao_evapotranspiration",
+  "canonical": "eto_mm",
+  "unit": "mm",
+  "value": 3.39,
+  "validation": "valid_pilot",
+  "request_source": "browser API response",
+  "full_period_status": "pending"
+}

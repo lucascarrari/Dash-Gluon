@@ -1,0 +1,43 @@
+{
+  "batch_id": "precip_era5_regional_batch_002",
+  "model": "era5",
+  "models_parameter": "era5",
+  "variable": "precipitation_sum",
+  "canonical": "precipitation_mm",
+  "timezone": "GMT",
+  "period": "2024-10-08/2026-10-07",
+  "points": [
+    {
+      "location_id": "BR_MS_CORUMBA",
+      "http_status": 200,
+      "days": 730,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 3647.429
+    },
+    {
+      "location_id": "BR_MS_DOURADOS",
+      "http_status": 200,
+      "days": 730,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 3595.286
+    },
+    {
+      "location_id": "BR_MT_RONDONOPOLIS",
+      "http_status": 200,
+      "days": 730,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 3543.143
+    }
+  ],
+  "estimated_billed_calls": 156.42857142857144,
+  "retry_margin_units": 31.285714285714292
+}

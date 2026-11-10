@@ -1,0 +1,156 @@
+:root {
+  --soil-olive: #29351f;
+  --soil-leaf: #8da34d;
+  --soil-coral: #f34f52;
+  --soil-ink: #232723;
+  --soil-muted: #687064;
+  --soil-canvas: #f3efe6;
+  --soil-surface: #fffdf8;
+  --soil-border: #e4e8df;
+}
+
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+  background: var(--soil-canvas);
+}
+
+[data-testid="stSidebar"] {
+  background: var(--soil-olive);
+}
+
+[data-testid="stSidebar"] * {
+  color: #f7f8f3;
+}
+
+[data-testid="stSidebarHeader"] {
+  box-sizing: border-box;
+  height: 142px !important;
+  min-height: 142px !important;
+  margin-bottom: 0.5rem !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+[data-testid="stSidebarLogo"] {
+  box-sizing: border-box;
+  display: block;
+  width: 210px !important;
+  max-width: calc(100% - 2.5rem) !important;
+  height: 112px !important;
+  margin: 0.5rem 0 0.5rem 0.75rem !important;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: var(--soil-canvas);
+  object-fit: contain;
+  object-position: center;
+}
+
+[data-testid="stSidebar"] input,
+[data-testid="stSidebar"] [data-baseweb="select"] {
+  color: var(--soil-ink) !important;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--soil-ink);
+  letter-spacing: -0.025em;
+}
+
+[data-testid="stMetric"] {
+  padding: 16px 18px;
+  border: 1px solid var(--soil-border);
+  border-radius: 14px;
+  background: var(--soil-surface);
+}
+
+div.stButton > button[kind="primary"] {
+  border-color: var(--soil-coral);
+  background: var(--soil-coral);
+  color: #fff;
+}
+
+.map-legend {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0.3rem 0 0.6rem;
+  color: var(--soil-muted);
+  font-size: 0.82rem;
+}
+
+.map-gradient {
+  height: 12px;
+  flex: 1;
+  border: 1px solid rgba(20, 40, 30, 0.12);
+  border-radius: 99px;
+}
+
+.point-window-head {
+  margin: 0.15rem 0 0.9rem;
+  padding: 0.15rem 0 0.15rem 0.85rem;
+  border-left: 5px solid var(--soil-leaf);
+}
+
+.point-window-kicker {
+  color: var(--soil-leaf);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.point-window-title {
+  margin: 0.12rem 0;
+  color: var(--soil-ink);
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.point-window-meta {
+  color: var(--soil-muted);
+  font-size: 0.87rem;
+}
+
+.point-metric-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.4rem;
+}
+
+.point-metric-row {
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--soil-border);
+  border-radius: 10px;
+  background: var(--soil-surface);
+}
+
+.point-metric-name {
+  color: var(--soil-muted);
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.point-metric-value {
+  margin-top: 0.16rem;
+  color: var(--soil-ink);
+  font-size: 0.94rem;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .block-container {
+    padding: 1rem 1rem 3rem;
+  }
+
+  [data-testid="stSidebarLogo"] {
+    width: 200px !important;
+    height: 106px !important;
+    margin: 0.5rem 0 0.5rem 0.5rem !important;
+  }
+
+  [data-testid="stSidebarHeader"] {
+    height: 132px !important;
+    min-height: 132px !important;
+  }
+}

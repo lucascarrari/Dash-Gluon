@@ -1,0 +1,448 @@
+{
+  "decimais": [
+    {
+      "label": "ERA5-Land · Tmax/Tmin e solo diária · 67 localidades/27 UFs",
+      "linhas": 48910,
+      "columns": {
+        "tmax_c": {
+          "dtype": "str",
+          "amostras": [
+            "35,4",
+            "31,4",
+            "29,7"
+          ],
+          "validos_conversao_atual": 4871,
+          "validos_decimal_normalizado": 48910,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        },
+        "tmin_c": {
+          "dtype": "str",
+          "amostras": [
+            "24,3",
+            "24,4",
+            "23,9"
+          ],
+          "validos_conversao_atual": 4840,
+          "validos_decimal_normalizado": 48910,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        },
+        "latitude": {
+          "dtype": "str",
+          "amostras": [
+            "-7,6311",
+            "-7,6311",
+            "-7,6311"
+          ],
+          "validos_conversao_atual": 0,
+          "validos_decimal_normalizado": 48910,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        },
+        "longitude": {
+          "dtype": "str",
+          "amostras": [
+            "-72,6703",
+            "-72,6703",
+            "-72,6703"
+          ],
+          "validos_conversao_atual": 0,
+          "validos_decimal_normalizado": 48910,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        }
+      }
+    },
+    {
+      "label": "ERA5 · precipitação diária · 27 UFs",
+      "linhas": 19710,
+      "columns": {
+        "precipitation_mm": {
+          "dtype": "str",
+          "amostras": [
+            "0,3",
+            "16,4",
+            "13,6"
+          ],
+          "validos_conversao_atual": 7625,
+          "validos_decimal_normalizado": 19710,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        },
+        "latitude": {
+          "dtype": "str",
+          "amostras": [
+            "-7,75",
+            "-7,75",
+            "-7,75"
+          ],
+          "validos_conversao_atual": 6570,
+          "validos_decimal_normalizado": 19710,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        },
+        "longitude": {
+          "dtype": "str",
+          "amostras": [
+            "-72,75",
+            "-72,75",
+            "-72,75"
+          ],
+          "validos_conversao_atual": 9490,
+          "validos_decimal_normalizado": 19710,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        }
+      }
+    },
+    {
+      "label": "ERA5-Seamless · ETo diária parcial · 31 localidades/18 UFs",
+      "linhas": 22630,
+      "columns": {
+        "eto_mm": {
+          "dtype": "str",
+          "amostras": [
+            "5.06",
+            "3.77",
+            "3.23"
+          ],
+          "validos_conversao_atual": 17520,
+          "validos_decimal_normalizado": 22630,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        },
+        "latitude": {
+          "dtype": "str",
+          "amostras": [
+            "-7.6311",
+            "-7.6311",
+            "-7.6311"
+          ],
+          "validos_conversao_atual": 17520,
+          "validos_decimal_normalizado": 22630,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        },
+        "longitude": {
+          "dtype": "str",
+          "amostras": [
+            "-72.6703",
+            "-72.6703",
+            "-72.6703"
+          ],
+          "validos_conversao_atual": 17520,
+          "validos_decimal_normalizado": 22630,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        }
+      }
+    },
+    {
+      "label": "ERA5-Land · horária · produto Gold existente",
+      "linhas": 250000,
+      "columns": {
+        "latitude": {
+          "dtype": "float32",
+          "amostras": [
+            -7.631100177764893,
+            -7.631100177764893,
+            -7.631100177764893
+          ],
+          "validos_conversao_atual": 250000,
+          "validos_decimal_normalizado": 250000,
+          "sugestao_tipo_atual": "regression",
+          "disponivel_timeseries": false
+        },
+        "longitude": {
+          "dtype": "float32",
+          "amostras": [
+            -72.67030334472656,
+            -72.67030334472656,
+            -72.67030334472656
+          ],
+          "validos_conversao_atual": 250000,
+          "validos_decimal_normalizado": 250000,
+          "sugestao_tipo_atual": "regression",
+          "disponivel_timeseries": false
+        }
+      }
+    },
+    {
+      "label": "ERA5 · horária Norte/Centro-Oeste · 24 localidades",
+      "linhas": 250000,
+      "columns": {
+        "latitude": {
+          "dtype": "float64",
+          "amostras": [
+            -7.6311,
+            -7.6311,
+            -7.6311
+          ],
+          "validos_conversao_atual": 250000,
+          "validos_decimal_normalizado": 250000,
+          "sugestao_tipo_atual": "regression",
+          "disponivel_timeseries": false
+        },
+        "longitude": {
+          "dtype": "float64",
+          "amostras": [
+            -72.6703,
+            -72.6703,
+            -72.6703
+          ],
+          "validos_conversao_atual": 250000,
+          "validos_decimal_normalizado": 250000,
+          "sugestao_tipo_atual": "regression",
+          "disponivel_timeseries": false
+        }
+      }
+    },
+    {
+      "label": "ERA5 · horária expansão · 16 localidades",
+      "linhas": 250000,
+      "columns": {
+        "latitude": {
+          "dtype": "str",
+          "amostras": [
+            "-9,6658",
+            "-9,6658",
+            "-9,6658"
+          ],
+          "validos_conversao_atual": 0,
+          "validos_decimal_normalizado": 250000,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        },
+        "longitude": {
+          "dtype": "str",
+          "amostras": [
+            "-35,7351",
+            "-35,7351",
+            "-35,7351"
+          ],
+          "validos_conversao_atual": 0,
+          "validos_decimal_normalizado": 250000,
+          "sugestao_tipo_atual": "multiclass",
+          "disponivel_timeseries": false
+        }
+      }
+    }
+  ],
+  "cadeia_completa_erro_tabular": "Traceback (most recent call last):\n  File \"C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-voronoi-master\\soilframe\\soilframe\\core\\strategy.py\", line 368, in fit\n    from autogluon.tabular import TabularPredictor\nModuleNotFoundError: No module named 'autogluon'\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-voronoi-master\\soilframe\\soilframe\\models\\modelo_autogluon.py\", line 295, in treinar\n    self.estrategia.fit(treino)\n  File \"C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-voronoi-master\\soilframe\\soilframe\\core\\strategy.py\", line 370, in fit\n    raise ImportError(\nImportError: TabularPredictor não está instalado; instale o extra AutoGluon Tabular.\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\validacao\\verificar_achados.py\", line 39, in <module>\n    manager._run_tabular(frame, options, HERE / \"diagnostico_modelo\")\n  File \"C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\soilframe_dashboard\\jobs.py\", line 315, in _run_tabular\n    model.treinar(dataframe)\n  File \"C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-voronoi-master\\soilframe\\soilframe\\models\\modelo_autogluon.py\", line 297, in treinar\n    raise RuntimeError(\nRuntimeError: Falha durante o treinamento do modelo SoilFrame.\n",
+  "regressao_fonte_padrao_sem_normalizacao": {
+    "train": 87,
+    "test": 22
+  },
+  "historico_preexistente_nao_e_treino_novo": [
+    {
+      "run_id": "b75919473284",
+      "task_type": "tabular",
+      "target": "eto_mm",
+      "status": "completed",
+      "duration_seconds": 413.17,
+      "predictions_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\b75919473284\\predictions.csv",
+      "leaderboard_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\b75919473284\\leaderboard.csv",
+      "error": null,
+      "metrics": {
+        "mae": 0.48510387539863586,
+        "rmse": 0.6244703909984073,
+        "r2": 0.8299880027770996,
+        "rows_train": 39128,
+        "rows_test": 9782,
+        "training_seconds": 413.17,
+        "target": "eto_mm",
+        "problem_type": "regression",
+        "validation_strategy": "temporal",
+        "primary_metric": "root_mean_squared_error",
+        "test_start_date": "2026-05-15 00:00:00",
+        "test_end_date": "2026-10-07 00:00:00",
+        "rows_used": 48910
+      },
+      "predictions_path_existe": true,
+      "leaderboard_path_existe": true
+    },
+    {
+      "run_id": "4c030d36d39d",
+      "task_type": "tabular",
+      "target": "tmax_c",
+      "status": "completed",
+      "duration_seconds": 59.71,
+      "predictions_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\4c030d36d39d\\predictions.csv",
+      "leaderboard_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\4c030d36d39d\\leaderboard.csv",
+      "error": null,
+      "metrics": {
+        "mae": 1.0230743885040283,
+        "rmse": 1.1810471739040294,
+        "r2": 0.0043027400970458984,
+        "rows_train": 25,
+        "rows_test": 10,
+        "training_seconds": 59.71,
+        "target": "tmax_c",
+        "problem_type": "regression",
+        "validation_strategy": "temporal",
+        "primary_metric": "root_mean_squared_error",
+        "test_start_date": "2025-12-12 00:00:00",
+        "test_end_date": "2025-12-13 00:00:00",
+        "rows_used": 35
+      },
+      "predictions_path_existe": true,
+      "leaderboard_path_existe": true
+    },
+    {
+      "run_id": "580597d2b804",
+      "task_type": "tabular",
+      "target": "eto_mm",
+      "status": "completed",
+      "duration_seconds": 308.11,
+      "predictions_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\580597d2b804\\predictions.csv",
+      "leaderboard_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\580597d2b804\\leaderboard.csv",
+      "error": null,
+      "metrics": {
+        "mae": 0.5453141331672668,
+        "rmse": 0.7234989922838766,
+        "r2": 0.1804766058921814,
+        "rows_train": 268,
+        "rows_test": 67,
+        "training_seconds": 308.11,
+        "target": "eto_mm",
+        "problem_type": "regression",
+        "validation_strategy": "temporal",
+        "primary_metric": "root_mean_squared_error",
+        "test_start_date": "2024-10-16 00:00:00",
+        "test_end_date": "2024-10-16 00:00:00",
+        "rows_used": 335
+      },
+      "predictions_path_existe": true,
+      "leaderboard_path_existe": true
+    },
+    {
+      "run_id": "f85604733263",
+      "task_type": "tabular",
+      "target": "timestamp_utc",
+      "status": "failed",
+      "duration_seconds": 0.54,
+      "predictions_path": null,
+      "leaderboard_path": null,
+      "error": "ValueError: A coluna-alvo 'timestamp_utc' não existe nos dados selecionados.",
+      "metrics": {},
+      "predictions_path_existe": false,
+      "leaderboard_path_existe": false
+    },
+    {
+      "run_id": "aa0cb8f4f7c4",
+      "task_type": "tabular",
+      "target": "temperature_2m",
+      "status": "completed",
+      "duration_seconds": 397.36,
+      "predictions_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\aa0cb8f4f7c4\\predictions.csv",
+      "leaderboard_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\aa0cb8f4f7c4\\leaderboard.csv",
+      "error": null,
+      "metrics": {
+        "mae": 0.12343550963450005,
+        "rmse": 0.16927512197852007,
+        "r2": 0.9990047386660839,
+        "rows_train": 200944,
+        "rows_test": 49056,
+        "training_seconds": 397.36,
+        "target": "temperature_2m",
+        "problem_type": "regression",
+        "validation_strategy": "temporal",
+        "primary_metric": "root_mean_squared_error",
+        "test_start_date": "2026-05-15 00:00:00+00:00",
+        "test_end_date": "2026-10-07 23:00:00+00:00",
+        "rows_used": 250000
+      },
+      "predictions_path_existe": true,
+      "leaderboard_path_existe": true
+    },
+    {
+      "run_id": "9b3ed2949917",
+      "task_type": "tabular",
+      "target": "temperature_2m",
+      "status": "completed",
+      "duration_seconds": 78.83,
+      "predictions_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\9b3ed2949917\\predictions.csv",
+      "leaderboard_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\9b3ed2949917\\leaderboard.csv",
+      "error": null,
+      "metrics": {
+        "mae": 0.44586132273954476,
+        "rmse": 0.5916857454827957,
+        "r2": 0.9652482494094694,
+        "rows_train": 134,
+        "rows_test": 34,
+        "training_seconds": 78.83,
+        "target": "temperature_2m",
+        "problem_type": "regression",
+        "validation_strategy": "temporal",
+        "primary_metric": "root_mean_squared_error",
+        "test_start_date": "2026-09-25 14:00:00+00:00",
+        "test_end_date": "2026-09-26 23:00:00+00:00",
+        "rows_used": 168
+      },
+      "predictions_path_existe": true,
+      "leaderboard_path_existe": true
+    },
+    {
+      "run_id": "a5b25b5df940",
+      "task_type": "tabular",
+      "target": "api_latitude",
+      "status": "completed",
+      "duration_seconds": 619.24,
+      "predictions_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\a5b25b5df940\\predictions.csv",
+      "leaderboard_path": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Soil\\SoilFrame-Dashboard-e-Dados\\soilframe-dashboard\\outputs\\runs\\a5b25b5df940\\leaderboard.csv",
+      "error": null,
+      "metrics": {
+        "accuracy": 0.9723502304147466,
+        "f1_macro": 0.9661290322580645,
+        "f1_weighted": 0.9661290322580646,
+        "rows_train": 744,
+        "rows_test": 217,
+        "training_seconds": 619.24,
+        "target": "api_latitude",
+        "problem_type": "multiclass",
+        "validation_strategy": "temporal",
+        "primary_metric": "f1_macro",
+        "test_start_date": "2026-07-25 00:00:00",
+        "test_end_date": "2026-07-31 00:00:00",
+        "random_state": 42,
+        "probability_classes": [
+          "-1.5",
+          "-10",
+          "-10.199997",
+          "-11.699997",
+          "-11.900002",
+          "-12,199997",
+          "-12.5",
+          "-12.699997",
+          "-13",
+          "-15.599998",
+          "-15.799995",
+          "-16,699997",
+          "-16.5",
+          "-16.699997",
+          "-16.799995",
+          "-17.799995",
+          "-19",
+          "-2.4000015",
+          "-20.5",
+          "-21,199997",
+          "-22.199997",
+          "-23,299995",
+          "-3",
+          "-3.0999985",
+          "-7,199997",
+          "-7,5",
+          "-7.5999985",
+          "-8.799995",
+          "-9,400002",
+          "0.099998474",
+          "2.800003"
+        ],
+        "rows_used": 961
+      },
+      "predictions_path_existe": true,
+      "leaderboard_path_existe": true
+    }
+  ]
+}

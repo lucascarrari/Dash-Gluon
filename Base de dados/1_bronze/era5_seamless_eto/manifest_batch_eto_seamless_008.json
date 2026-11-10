@@ -1,0 +1,29 @@
+{
+  "batch_id": "eto_seamless_regional_batch_008",
+  "model": "era5_seamless",
+  "variable": "et0_fao_evapotranspiration",
+  "period": "2024-10-08/2026-10-07",
+  "points": [
+    {
+      "location_id": "BR_TO_GURUPI",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 3911.143
+    },
+    {
+      "location_id": "BR_TO_PALMAS",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 3859.0
+    }
+  ],
+  "estimated_calls": 104.28571428571429,
+  "retry_margin_units": 20.85714285714286,
+  "timezone": "GMT"
+}

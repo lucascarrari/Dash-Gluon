@@ -1,0 +1,71 @@
+﻿{
+    "batch_id":  "eto_seamless_missing_ufs_2026-11-09",
+    "endpoint":  "/v1/archive",
+    "models":  "era5_seamless",
+    "variable":  "et0_fao_evapotranspiration",
+    "period":  "2024-10-08/2026-10-07",
+    "timezone":  "GMT",
+    "initial_calls":  7703.6142857142768,
+    "initial_balance":  296.38571428572322,
+    "estimate_per_series":  52.142857142857146,
+    "retry_margin_per_series":  10.428571428571431,
+    "retry_margin_percent":  20,
+    "planned_cost":  208.57142857142858,
+    "planned_retry_reserve":  41.714285714285722,
+    "planned_total_with_reserve":  250.28571428571431,
+    "points":  [
+                   {
+                       "state":  "SP",
+                       "location_id":  "BR_SP_RIBEIRAO_PRETO",
+                       "script":  "coletar_eto_seamless_sp_serie.ps1",
+                       "status":  "validated"
+                   },
+                   {
+                       "state":  "MA",
+                       "location_id":  "BR_MA_BALSAS",
+                       "script":  "coletar_eto_seamless_ma_serie.ps1",
+                       "status":  "validated"
+                   },
+                   {
+                       "state":  "PI",
+                       "location_id":  "BR_PI_URUCUI",
+                       "script":  "coletar_eto_seamless_pi_serie.ps1",
+                       "status":  "validated"
+                   },
+                   {
+                       "state":  "PR",
+                       "location_id":  "BR_PR_LONDRINA",
+                       "script":  "coletar_eto_seamless_pr_serie.ps1",
+                       "status":  "validated"
+                   }
+               ],
+    "errors":  [
+
+               ],
+    "status":  "four_point_batch_complete",
+    "created_utc":  "2026-11-09T14:26:54.6550530Z",
+    "final_calls":  7912.1857142857052,
+    "final_balance":  87.814285714293874,
+    "uncovered_states":  [
+                             "AL",
+                             "CE",
+                             "ES",
+                             "MA",
+                             "PB",
+                             "PI",
+                             "PR",
+                             "RJ",
+                             "RN",
+                             "RS",
+                             "SC",
+                             "SE",
+                             "SP"
+                         ],
+    "completed_points":  [
+                             "BR_SP_RIBEIRAO_PRETO",
+                             "BR_MA_BALSAS",
+                             "BR_PI_URUCUI",
+                             "BR_PR_LONDRINA"
+                         ],
+    "updated_utc":  "2026-11-09T14:28:31.3303384Z"
+}

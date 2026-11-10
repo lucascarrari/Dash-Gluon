@@ -1,0 +1,38 @@
+{
+  "batch_id": "eto_seamless_regional_batch_005",
+  "model": "era5_seamless",
+  "variable": "et0_fao_evapotranspiration",
+  "period": "2024-10-08/2026-10-07",
+  "points": [
+    {
+      "location_id": "BR_MT_SAPEZAL",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4380.429
+    },
+    {
+      "location_id": "BR_MT_SINOP",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4328.286
+    },
+    {
+      "location_id": "BR_MT_SORRISO",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4276.143
+    }
+  ],
+  "estimated_calls": 156.42857142857144,
+  "retry_margin_units": 31.285714285714292,
+  "timezone": "GMT"
+}

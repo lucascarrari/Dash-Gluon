@@ -1,0 +1,38 @@
+{
+  "product": "precipitacao_diaria_norte_centro_oeste",
+  "model": "era5",
+  "period": "2024-10-08/2026-10-07",
+  "points": 24,
+  "states": 11,
+  "rows": 17520,
+  "expected_rows": 17520,
+  "valid_values": 17520,
+  "null_values": 0,
+  "duplicate_location_dates": 0,
+  "unit": "mm/day",
+  "frequency": "daily",
+  "validation_status": "complete_for_requested_field_and_points",
+  "known_scope": "Discrete named points do not imply continuous state or national coverage.",
+  "gaps": [
+    {
+      "field": "precipitation_mm",
+      "reason": "Expected unavailability in ERA5-Land.",
+      "period": "2024-10-08/2026-10-07",
+      "model": "era5_land"
+    },
+    {
+      "field": "snow_depth",
+      "reason": "Expected unavailability in ERA5.",
+      "period": "2024-10-08/2026-10-07",
+      "model": "era5"
+    },
+    {
+      "field": "eto_mm",
+      "reason": "ERA5-Land ETo is null in existing Bronze; the separate ERA5-Seamless product supplies the validated ETo series.",
+      "period": "2024-10-08/2026-10-07",
+      "model": "era5_land"
+    }
+  ],
+  "timezone": "GMT",
+  "alignment_note": "Daily boundaries match ERA5-Seamless ETo GMT product."
+}

@@ -1,0 +1,22 @@
+{
+  "dataset": "eto_diaria_nacional_parcial",
+  "model": "era5_seamless",
+  "period": "2024-10-08/2026-10-07",
+  "locations": 31,
+  "states": 18,
+  "rows": 22630,
+  "expected_rows": 22630,
+  "valid_values": 22630,
+  "null_values": 0,
+  "duplicate_location_dates": 0,
+  "unit": "mm/day",
+  "frequency": "daily",
+  "validation_status": "complete_for_collected_points",
+  "http_status": 200,
+  "all_returned_values_valid": true,
+  "timezone": "GMT",
+  "spatial_scope": "Discrete named points; not continuous state or national coverage.",
+  "coverage_note": "27 localidades iniciais mais BA, PE, MG, SP, MA, PI e PR; 9 UFs permanecem sem ETo.",
+  "bronze_raw": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\1_bronze\\era5_seamless_eto\\raw\\BR_BA_BARREIRAS_2024-10-08_2026-10-07.json",
+  "bronze_manifest": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\1_bronze\\era5_seamless_eto\\BR_BA_BARREIRAS_2024-10-08_2026-10-07.manifest.json"
+}

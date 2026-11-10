@@ -1,0 +1,33 @@
+{
+  "product": "tmax_tmin_soil_temp_era5_land_national",
+  "validation_status": "complete",
+  "rows": 48910,
+  "expected_rows": 48910,
+  "locations": 67,
+  "states": 27,
+  "regions": [
+    "Centro-Oeste",
+    "Nordeste",
+    "Norte",
+    "Sudeste",
+    "Sul"
+  ],
+  "valid_tmax": 48910,
+  "valid_tmin": 48910,
+  "valid_soil_temp_shallow": 48910,
+  "null_values": 0,
+  "duplicate_location_dates": 12960,
+  "conflicting_duplicate_values": 0,
+  "period": "2024-10-08/2026-10-07",
+  "frequency": "daily",
+  "source_model_by_variable": {
+    "tmax_c": "era5_land",
+    "tmin_c": "era5_land",
+    "soil_temp_shallow_c": "era5_land"
+  },
+  "excluded_best_match_fields": [
+    "eto_mm",
+    "precipitation_mm"
+  ],
+  "spatial_scope": "Discrete points; not continuous state or national coverage."
+}

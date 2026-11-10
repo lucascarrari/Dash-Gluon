@@ -1,0 +1,21 @@
+{
+  "batch_id": "eto_seamless_transport_pilot_002",
+  "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+  "model": "era5_seamless",
+  "models_parameter": "era5_seamless",
+  "variable_api": "et0_fao_evapotranspiration",
+  "canonical": "eto_mm",
+  "requested_location": "BR_AC_CRUZEIRO_DO_SUL",
+  "start_date": "2026-10-01",
+  "end_date": "2026-10-01",
+  "estimated_calls": 1,
+  "retry_margin_units": 0.2,
+  "http_status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "transport_error": null,
+  "parse_error": null,
+  "raw_response_file": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\1_bronze\\era5_seamless_eto\\raw\\pilot_transport_2026-10-01_attempt_002.txt",
+  "valid_pilot": true,
+  "request_url": "https://archive-api.open-meteo.com/v1/archive?latitude=-7.6311&longitude=-72.6703&start_date=2026-10-01&end_date=2026-10-01&daily=et0_fao_evapotranspiration&timezone=GMT&models=era5_seamless",
+  "timezone": "GMT"
+}

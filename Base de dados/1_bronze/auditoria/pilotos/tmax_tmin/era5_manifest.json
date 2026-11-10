@@ -1,0 +1,41 @@
+{
+  "batch_id": "tmax_tmin_latest_pilot_era5",
+  "model": "era5",
+  "models_parameter": "era5",
+  "endpoint": "https://archive-api.open-meteo.com/v1/archive",
+  "variables": [
+    {
+      "units": "°C",
+      "api": "temperature_2m_max",
+      "canonical": "tmax_c"
+    },
+    {
+      "units": "°C",
+      "api": "temperature_2m_min",
+      "canonical": "tmin_c"
+    }
+  ],
+  "frequency": "daily",
+  "timezone": "GMT",
+  "start_date": "2026-10-24",
+  "end_date": "2026-10-30",
+  "requested_location_id": "BR_AC_CRUZEIRO_DO_SUL",
+  "requested_latitude": -7.6311,
+  "requested_longitude": -72.6703,
+  "api_latitude": -7.75,
+  "api_longitude": -72.75,
+  "http_status": 200,
+  "content_type": "application/json; charset=utf-8",
+  "days_returned": 7,
+  "valid_tmax": 7,
+  "valid_tmin": 7,
+  "null_dates_tmax": [],
+  "null_dates_tmin": [],
+  "estimated_billed_calls": 1,
+  "retry_margin_units": 0.2,
+  "raw_file": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\1_bronze\\auditoria\\pilotos\\tmax_tmin\\era5_tmax_tmin_2026-10-24_2026-10-30.json",
+  "request_url": "https://archive-api.open-meteo.com/v1/archive?latitude=-7.6311&longitude=-72.6703&start_date=2026-10-24&end_date=2026-10-30&daily=temperature_2m_max,temperature_2m_min&timezone=GMT&models=era5",
+  "validation": true,
+  "parse_error": null,
+  "transport_error": null
+}

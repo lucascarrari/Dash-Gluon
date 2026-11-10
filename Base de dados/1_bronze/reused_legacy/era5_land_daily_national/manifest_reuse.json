@@ -1,0 +1,39 @@
+{
+  "product": "reused_legacy_era5_land_daily_national",
+  "source_lake": "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\DataLake Acquacrop",
+  "source_read_only": true,
+  "source_endpoint": "/v1/archive",
+  "model": "era5_land",
+  "period": {
+    "start": "2024-10-08",
+    "end": "2026-10-07",
+    "days": 730
+  },
+  "source_model_by_variable": {
+    "tmax_c": "era5_land",
+    "tmin_c": "era5_land",
+    "soil_temp_shallow_c": "era5_land",
+    "eto_mm": "Open-Meteo API default (best match)"
+  },
+  "source_run_manifest_sha256": "15C4CB4AAFFF4E260DB48167F42297DF44CACD9DFB18282A38BABFC1DA97762E",
+  "source_quality_sha256": "995BA71C1363EACDFEF2EA3364F0DE60FDCB5933F124C91BF69FC50F14C2A075",
+  "raw_files_copied": 386,
+  "raw_files_sha256_verified": true,
+  "duplicate_rows_skipped": 12960,
+  "duplicate_conflicts": 0,
+  "rows": 48910,
+  "locations": 67,
+  "states": 27,
+  "regions": [
+    "Centro-Oeste",
+    "Nordeste",
+    "Norte",
+    "Sudeste",
+    "Sul"
+  ],
+  "api_calls_today": 0,
+  "excluded": [
+    "eto_mm",
+    "precipitation_mm: best_match provenance"
+  ]
+}

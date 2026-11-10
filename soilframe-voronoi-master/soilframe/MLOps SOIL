@@ -1,0 +1,736 @@
+<mxfile host="app.diagrams.net" agent="Claude" pages="2">
+  <diagram id="soil-mlops-atual" name="Arquitetura Atual - MLOps SOIL">
+    <mxGraphModel dx="7683" dy="3100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1950" pageHeight="900" math="0" shadow="0" adaptiveColors="simple">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title1" parent="1" style="text;html=1;fontSize=22;fontStyle=1;align=left;verticalAlign=middle;fontColor=#1a1a1a;" value="SOIL — Arquitetura Atual de MLOps (MVP)" vertex="1">
+          <mxGeometry height="34" width="700" x="40" y="16" as="geometry" />
+        </mxCell>
+        <mxCell id="title2" parent="1" style="text;html=1;fontSize=13;fontStyle=2;align=left;verticalAlign=middle;fontColor=#666666;" value="Estado atual do pipeline (ETL → Treinamento → Deploy) — agosto/2026" vertex="1">
+          <mxGeometry height="24" width="700" x="40" y="48" as="geometry" />
+        </mxCell>
+        <mxCell id="f_ext" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;dashed=1;verticalAlign=top;align=left;fontSize=14;fontStyle=1;fontColor=#3a7a3a;spacingLeft=10;spacingTop=8;" value="Fontes Externas" vertex="1">
+          <mxGeometry height="135" width="220" x="40" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="n_api1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="API OpenMeteo" vertex="1">
+          <mxGeometry height="55" width="160" x="60" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="f_local" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;dashed=1;verticalAlign=top;align=left;fontSize=14;fontStyle=1;fontColor=#3a5a8a;spacingLeft=10;spacingTop=8;" value="Ambiente Local (máquina do time de dados)" vertex="1">
+          <mxGeometry height="470" width="616" x="294" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n_airflow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#3399ff;fontSize=11;fontStyle=1;" value="Apache Airflow&#xa;Orquestração das pipelines de ETL" vertex="1">
+          <mxGeometry height="70" width="220" x="340" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="n_train" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" value="Treinamento &amp; Avaliação de Modelos&#xa;(scripts Python locais)" vertex="1">
+          <mxGeometry height="90" width="220" x="310" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="n_mlflow" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" value="MLflow (local)&#xa;Tracking de experimentos&#xa;e registro de modelos" vertex="1">
+          <mxGeometry height="90" width="220" x="680" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="note_local" parent="1" style="text;html=1;fontSize=10;fontStyle=2;align=left;fontColor=#888888;" value="Execução manual / local — sem agendamento contínuo nem CI/CD" vertex="1">
+          <mxGeometry height="20" width="480" x="360" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="f_aws" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;dashed=1;verticalAlign=top;align=left;fontSize=14;fontStyle=1;fontColor=#b37700;spacingLeft=10;spacingTop=8;" value="AWS Cloud" vertex="1">
+          <mxGeometry height="470" width="830" x="960" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="n_s3" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" value="Amazon S3&#xa;Dados meteorológicos (raw/processed)&#xa;+ Modelos treinados (model registry)" vertex="1">
+          <mxGeometry height="95" width="280" x="1010" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="f_ec2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff8f0;strokeColor=#d79b00;verticalAlign=top;align=left;fontSize=12;fontStyle=1;fontColor=#b37700;spacingLeft=8;spacingTop=6;" value="Amazon EC2 (instância única)" vertex="1">
+          <mxGeometry height="140" width="720" x="1010" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="n_api" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" value="API Interna (Python)&#xa;Carrega modelo do S3&#xa;Endpoint de previsão (/predict)" vertex="1">
+          <mxGeometry height="80" width="220" x="1040" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="n_streamlit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" value="Aplicação Streamlit&#xa;Interface do usuário (MVP)" vertex="1">
+          <mxGeometry height="80" width="220" x="1470" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="note_aws" parent="1" style="text;html=1;fontSize=10;fontStyle=2;align=left;fontColor=#888888;" value="Deploy manual em instância única — sem IaC, auto-scaling ou monitoramento" vertex="1">
+          <mxGeometry height="20" width="560" x="1010" y="536" as="geometry" />
+        </mxCell>
+        <mxCell id="n_user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" value="Usuário Final&#xa;(técnico / agricultor)" vertex="1">
+          <mxGeometry height="60" width="160" x="1870" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="n_api1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#82b366;fontSize=9;fontColor=#3a7a3a;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="n_airflow" value="requisição HTTP&#xa;(extract)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="n_airflow" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3399ff;fontSize=10;fontColor=#3399ff;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" target="n_s3" value="load: dados brutos/tratados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="n_s3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3399ff;dashed=1;fontSize=10;fontColor=#3399ff;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;" target="n_train" value="leitura de dados históricos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="n_train" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d6b656;startArrow=classic;startFill=1;endArrow=classic;endFill=1;fontSize=10;fontColor=#8a7020;" target="n_mlflow" value="log de métricas, parâmetros&#xa;e artifacts">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="n_train" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d79b00;fontSize=10;fontColor=#b37700;exitX=0.7;exitY=0;exitDx=0;exitDy=0;entryX=0.3;entryY=1;entryDx=0;entryDy=0;" target="n_s3" value="upload do modelo validado (.pkl)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="n_s3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d79b00;fontSize=10;fontColor=#b37700;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="n_api" value="download do modelo treinado">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="n_streamlit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#555555;startArrow=classic;startFill=1;endArrow=classic;endFill=1;fontSize=10;fontColor=#555555;" target="n_api" value="requisição de previsão &lt;br&gt;⇔ &lt;br&gt;sugestão de irrigação">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="n_user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9673a6;fontSize=10;fontColor=#9673a6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="n_streamlit" value="acesso via navegador (HTTP)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;verticalAlign=top;align=left;fontSize=12;fontStyle=1;spacingLeft=10;spacingTop=6;" value="Legenda" vertex="1">
+          <mxGeometry height="190" width="820" x="40" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="60" y="672" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1t" parent="1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="Fontes de dados externas (APIs meteorológicas)" vertex="1">
+          <mxGeometry height="26" width="360" x="94" y="668" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="60" y="704" as="geometry" />
+        </mxCell>
+        <mxCell id="leg2t" parent="1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="Ambiente local (ETL / treinamento executados manualmente)" vertex="1">
+          <mxGeometry height="26" width="400" x="94" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="60" y="736" as="geometry" />
+        </mxCell>
+        <mxCell id="leg3t" parent="1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="MLflow — tracking e registro de experimentos" vertex="1">
+          <mxGeometry height="26" width="360" x="94" y="732" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="460" y="672" as="geometry" />
+        </mxCell>
+        <mxCell id="leg4t" parent="1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="AWS Cloud (S3 + EC2 — API e Streamlit)" vertex="1">
+          <mxGeometry height="26" width="320" x="494" y="668" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="460" y="704" as="geometry" />
+        </mxCell>
+        <mxCell id="leg5t" parent="1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="Usuário final da aplicação" vertex="1">
+          <mxGeometry height="26" width="320" x="494" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="leg6t" parent="1" style="text;html=1;fontSize=10;fontStyle=2;align=left;fontColor=#888888;" value="Observação geral: não há ainda CI/CD, monitoramento de modelos em produção (drift/perf) nem infraestrutura como código — próximos passos do MLOps." vertex="1">
+          <mxGeometry height="40" width="760" x="60" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-1" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;fontColor=#1a1a1a;" value="Framework de Pesquisa — Proposta de Revisão (diagrama de classes)" vertex="1">
+          <mxGeometry height="30" width="900" x="20.001538461538587" y="930.0046153846152" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-2" parent="1" style="text;html=1;fontSize=12;fontStyle=2;align=left;verticalAlign=middle;fontColor=#666666;" value="Base: soil.drawio enviado pela equipe. Em azul: classes originais com adições. Em verde: classes novas propostas. Preto: mantido como estava." vertex="1">
+          <mxGeometry height="24" width="1000" x="20.001538461538587" y="960.0046153846152" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-3" parent="1" style="fontStyle=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="INMET" vertex="1">
+          <mxGeometry height="30" width="70" x="40.00153846153859" y="1050.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-4" parent="1" style="fontStyle=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="ERA5" vertex="1">
+          <mxGeometry height="30" width="70" x="120.00153846153859" y="1050.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-5" parent="1" style="fontStyle=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Xavier" vertex="1">
+          <mxGeometry height="30" width="70" x="200.0015384615386" y="1050.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-6" parent="1" style="fontStyle=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" value="S3 (curado) – novo" vertex="1">
+          <mxGeometry height="30" width="90" x="280.0015384615386" y="1050.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-7" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" value="Fonte de Dados (revisado)" vertex="1">
+          <mxGeometry height="90" width="340" x="40" y="1106" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-8" parent="oDE2eAoZzIGxH4k-oU_C-7" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- nome: str" vertex="1">
+          <mxGeometry height="15" width="340" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-9" parent="oDE2eAoZzIGxH4k-oU_C-7" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="340" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-10" parent="oDE2eAoZzIGxH4k-oU_C-7" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="+ extrair(): DataFrame  (novo)&#xa;+ validar_schema()  (novo)" vertex="1">
+          <mxGeometry height="35" width="340" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-11" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="EstrategiaTransformacao «Strategy» (mantido)" vertex="1">
+          <mxGeometry height="80" width="260" x="40" y="1216" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-12" parent="oDE2eAoZzIGxH4k-oU_C-11" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="+ limpar(dados)&#xa;+ transformar(dados)" vertex="1">
+          <mxGeometry height="50" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-13" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" value="Pipeline (revisado)" vertex="1">
+          <mxGeometry height="220" width="300" x="488.0015384615386" y="1106.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-14" parent="oDE2eAoZzIGxH4k-oU_C-13" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="- parametros: dict&#xa;- estado_ajustado: dict  (novo – separa config de estado treinado)" vertex="1">
+          <mxGeometry height="30" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-15" parent="oDE2eAoZzIGxH4k-oU_C-13" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="300" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-16" parent="oDE2eAoZzIGxH4k-oU_C-13" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ rodar()&#xa;+ mapa()&#xa;+ relacionar(pipeline)&#xa;+ combinar(Pipeline) → Pipeline&#xa;+ dropar(α) 0..1 → Pipeline&#xa;+ ajustar(dados)  (novo)&#xa;+ transformar(dados)  (novo)&#xa;+ esquema_entrada()/esquema_saida()  (novo)&#xa;+ salvar(caminho)  (novo)&#xa;+ carregar(caminho) «classmethod»  (novo)" vertex="1">
+          <mxGeometry height="152" width="300" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-17" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" value="Modelo (revisado)" vertex="1">
+          <mxGeometry height="200" width="300" x="864.0015384615385" y="1106.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-18" parent="oDE2eAoZzIGxH4k-oU_C-17" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="- parametros: dict&#xa;- versao: str  (novo)" vertex="1">
+          <mxGeometry height="30" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-19" parent="oDE2eAoZzIGxH4k-oU_C-17" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="300" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-20" parent="oDE2eAoZzIGxH4k-oU_C-17" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ treinar(pipeline)&#xa;+ prever()&#xa;+ metadados()&#xa;+ combinar(Modelo) → Modelo&#xa;+ dropar(Modelo)&#xa;+ avaliar(pipeline_teste): Metricas  (novo)&#xa;+ salvar(caminho)  (novo)&#xa;+ carregar(caminho) «classmethod»  (novo)&#xa;+ registrar(tracker: RastreadorExperimento)  (novo)" vertex="1">
+          <mxGeometry height="132" width="300" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-21" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" value="Predição (revisado)" vertex="1">
+          <mxGeometry height="120" width="260" x="1224.0015384615385" y="1106.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-22" parent="oDE2eAoZzIGxH4k-oU_C-21" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="- pipeline: Pipeline&#xa;- modelo: Modelo" vertex="1">
+          <mxGeometry height="30" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-23" parent="oDE2eAoZzIGxH4k-oU_C-21" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-24" parent="oDE2eAoZzIGxH4k-oU_C-21" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ rodar()&#xa;+ validar(entrada): bool  (novo)&#xa;+ versao_modelo()  (novo)" vertex="1">
+          <mxGeometry height="52" width="260" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-25" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" value="Metricas (novo)" vertex="1">
+          <mxGeometry height="90" width="220" x="488.0015384615386" y="1376.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-26" parent="oDE2eAoZzIGxH4k-oU_C-25" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="- valores: dict" vertex="1">
+          <mxGeometry height="15" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-27" parent="oDE2eAoZzIGxH4k-oU_C-25" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="220" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-28" parent="oDE2eAoZzIGxH4k-oU_C-25" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ comparar(baseline): bool&#xa;+ para_dict(): dict" vertex="1">
+          <mxGeometry height="35" width="220" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-29" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" value="RastreadorExperimento «interface» (novo)" vertex="1">
+          <mxGeometry height="100" width="280" x="748.0015384615385" y="1376.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-30" parent="oDE2eAoZzIGxH4k-oU_C-29" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ log_param(chave, valor)&#xa;+ log_metrica(chave, valor)&#xa;+ log_artefato(caminho)&#xa;+ registrar_modelo(modelo, pipeline, metricas)" vertex="1">
+          <mxGeometry height="70" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-31" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=0;" value="MLflowTracker (novo)&#xa;implementação concreta usando MLflow" vertex="1">
+          <mxGeometry height="60" width="280" x="748.0015384615385" y="1516.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-32" parent="1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" value="RepositorioModelos (novo)" vertex="1">
+          <mxGeometry height="100" width="340" x="1068.0015384615385" y="1376.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-33" parent="oDE2eAoZzIGxH4k-oU_C-32" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ obter(nome, estagio=&#39;Production&#39;): Predição&#xa;+ registrar(modelo, pipeline, metricas)&#xa;+ promover(nome, versao, estagio)" vertex="1">
+          <mxGeometry height="70" width="340" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-34" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;entryX=0.103;entryY=-0.008;entryDx=0;entryDy=0;entryPerimeter=0;" target="oDE2eAoZzIGxH4k-oU_C-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="1100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-35" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.339;entryY=0.001;entryDx=0;entryDy=0;strokeColor=#82b366;entryPerimeter=0;" target="oDE2eAoZzIGxH4k-oU_C-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-36" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.574;entryY=-0.008;entryDx=0;entryDy=0;strokeColor=#82b366;entryPerimeter=0;" target="oDE2eAoZzIGxH4k-oU_C-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-37" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.838;entryY=-0.005;entryDx=0;entryDy=0;strokeColor=#82b366;entryPerimeter=0;" target="oDE2eAoZzIGxH4k-oU_C-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-38" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;" target="oDE2eAoZzIGxH4k-oU_C-14" value="fornece dados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-39" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;entryX=-0.006;entryY=0.544;entryDx=0;entryDy=0;entryPerimeter=0;" target="oDE2eAoZzIGxH4k-oU_C-16" value="injetada em">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-40" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;" target="oDE2eAoZzIGxH4k-oU_C-18" value="alimenta treinar()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-41" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;" target="oDE2eAoZzIGxH4k-oU_C-22" value="alimenta rodar()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-42" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="oDE2eAoZzIGxH4k-oU_C-21" value="(novo) referência direta — Predição também guarda o Pipeline usado">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="1161" />
+              <mxPoint x="810" y="1080.03" />
+              <mxPoint x="1290" y="1080.03" />
+              <mxPoint x="1290" y="1106.03" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-43" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-29" value="(novo) &lt;br&gt;usa via injeção &lt;br&gt;de dependência">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="980" y="1310" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-44" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=block;endFill=0;endSize=14;strokeColor=#82b366;fontColor=#3a7a3a;fontSize=9;" target="oDE2eAoZzIGxH4k-oU_C-29" value="implementa">
+          <mxGeometry relative="1" x="0.176" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-45" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;exitX=0.09;exitY=1.003;exitDx=0;exitDy=0;exitPerimeter=0;" target="oDE2eAoZzIGxH4k-oU_C-25" value="(novo) retorna via avaliar()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-46" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;" target="oDE2eAoZzIGxH4k-oU_C-32" value="(novo) registrar(modelo, pipeline, metricas)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-47" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" target="oDE2eAoZzIGxH4k-oU_C-21" value="(novo) obter() retorna instância pronta p/ servir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-48" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;verticalAlign=top;align=left;fontSize=12;fontStyle=1;spacingLeft=10;spacingTop=6;" value="Legenda" vertex="1">
+          <mxGeometry height="130" width="1000" x="40.00153846153859" y="1622.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-49" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="60.00153846153859" y="1654.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-50" parent="1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="Classe original, mantida sem alteração (ex: EstrategiaTransformacao)" vertex="1">
+          <mxGeometry height="26" width="450" x="94.00153846153859" y="1650.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-51" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="60.00153846153859" y="1686.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-52" parent="1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="Classe original, revisada — ganhou atributos/métodos (marcados &quot;novo&quot;)" vertex="1">
+          <mxGeometry height="26" width="450" x="94.00153846153859" y="1682.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-53" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="60.00153846153859" y="1717.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-54" parent="1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="Classe nova, proposta nesta análise" vertex="1">
+          <mxGeometry height="26" width="450" x="94.00153846153859" y="1713.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-55" parent="1" style="text;html=1;fontSize=10;fontStyle=2;align=left;fontColor=#888888;" value="Setas tracejadas azuis = relações novas propostas. &lt;br&gt;Ver relatório &quot;analise_critica_framework_integracao.md&quot; para a justificativa de cada item." vertex="1">
+          <mxGeometry height="80" width="470" x="540.0015384615385" y="1649.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-56" parent="1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;fontColor=#1a1a1a;" value="SOIL — Arquitetura Alvo de MLOps (com integração da equipe de pesquisa)" vertex="1">
+          <mxGeometry height="30" width="1000" x="19.996923076922855" y="1829.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-57" parent="1" style="text;html=1;fontSize=12;fontStyle=2;align=left;verticalAlign=middle;fontColor=#666666;" value="Evolução da arquitetura atual: MLflow compartilhado, gate de validação automático, API desacoplada via pyfunc e monitoramento pós-deploy." vertex="1">
+          <mxGeometry height="24" width="1100" x="19.996923076922855" y="1861.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-58" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#82b366;dashed=1;verticalAlign=top;align=left;fontSize=13;fontStyle=1;fontColor=#3a7a3a;spacingLeft=10;spacingTop=8;" value="Fontes Externas" vertex="1">
+          <mxGeometry height="130" width="260" x="440" y="1916" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-60" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="API OpenMeteo / ERA5 / Xavier" vertex="1">
+          <mxGeometry height="45" width="220" x="459.9969230769228" y="1969.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-61" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#cfe2f3;strokeColor=#3399ff;fontSize=11;fontStyle=1;" value="Apache Airflow — Ingestão &amp; ETL&#xa;(agendado / gerenciado)" vertex="1">
+          <mxGeometry height="70" width="260" x="439.9969230769228" y="2125.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-62" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" value="Amazon S3 — Data Lake Curado&#xa;fonte única de dados de treino" vertex="1">
+          <mxGeometry height="90" width="260" x="439.9969230769228" y="2235.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-63" parent="1" style="text;html=1;fontSize=9;fontStyle=2;align=left;fontColor=#888888;" value="Treinamento não consome as APIs meteorológicas diretamente:&lt;br&gt;sempre lê do S3 curado (evita duplicação e quebra de reprodutibilidade)" vertex="1">
+          <mxGeometry height="60" width="260" x="719.9969230769228" y="2245.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-64" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#6c8ebf;dashed=1;verticalAlign=top;align=left;fontSize=13;fontStyle=1;fontColor=#3a5a8a;spacingLeft=10;spacingTop=8;" value="Times de Treinamento — usam a lib compartilhada &quot;soil-ml-framework&quot;" vertex="1">
+          <mxGeometry height="190" width="900" x="119.99692307692285" y="2365.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-65" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" value="SOIL&lt;br&gt;implementa Pipeline / Modelo&lt;br&gt;via soil-ml-framework" vertex="1">
+          <mxGeometry height="110" width="380" x="159.99692307692285" y="2415.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-66" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;fontSize=11;fontStyle=1;" value="Firjan&lt;br&gt;implementa Pipeline / Modelo&lt;br&gt;via soil-ml-framework" vertex="1">
+          <mxGeometry height="110" width="380" x="599.9969230769228" y="2415.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-67" parent="1" style="text;html=1;fontSize=10;fontStyle=2;align=left;fontColor=#888888;" value="Contrato formal via lib compartilhada evita retrabalho e quebras de integração entre os dois times" vertex="1">
+          <mxGeometry height="20" width="700" x="159.99692307692285" y="2525.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-68" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;fontStyle=1;" value="MLflow Tracking Server (compartilhado) — (novo)&#xa;Backend: Postgres/RDS  |  Artifacts: S3&#xa;+ Model Registry (Staging → Production)" vertex="1">
+          <mxGeometry height="120" width="300" x="290" y="2606" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-69" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" value="Validação Automática (Airflow DAG) — (novo)&#xa;Avalia modelo em dataset golden&#xa;vs. baseline em Production" vertex="1">
+          <mxGeometry height="120" width="280" x="820" y="2606" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-70" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" value="Monitoramento — (novo)&#xa;Log de previsões (input/output) em S3&#xa;+ métricas de drift/performance" vertex="1">
+          <mxGeometry height="120" width="240" x="1248" y="2606" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-71" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;dashed=1;verticalAlign=top;align=left;fontSize=13;fontStyle=1;fontColor=#b37700;spacingLeft=10;spacingTop=8;" value="AWS Cloud" vertex="1">
+          <mxGeometry height="290" width="870" x="230" y="2766" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-72" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff8f0;strokeColor=#d79b00;verticalAlign=top;align=left;fontSize=12;fontStyle=1;fontColor=#b37700;spacingLeft=8;spacingTop=6;" value="EC2 / Containers (docker-compose) — deploy via CI/CD (novo)" vertex="1">
+          <mxGeometry height="200" width="800" x="260" y="2816" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-73" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" value="API Interna (Python)&#xa;Carrega modelo via mlflow.pyfunc (novo)&#xa;models:/soil-irrigacao/Production&#xa;Endpoint /predict" vertex="1">
+          <mxGeometry height="120" width="240" x="290" y="2866" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-74" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" value="Aplicação Streamlit&#xa;container separado — (novo: desacoplado da API)" vertex="1">
+          <mxGeometry height="120" width="290" x="730" y="2866" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-75" parent="1" style="text;html=1;fontSize=10;fontStyle=2;align=left;fontColor=#888888;" value="Deploy via CI/CD — build de imagem, push, rollout (substitui deploy manual em instância única)" vertex="1">
+          <mxGeometry height="20" width="690" x="369.9969230769228" y="3021.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-76" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" value="Usuário Final&#xa;(técnico / agricultor)" vertex="1">
+          <mxGeometry height="70" width="190" x="1199.996923076923" y="2890.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-78" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-60" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#82b366;" target="oDE2eAoZzIGxH4k-oU_C-61">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="730" y="1992.5" />
+              <mxPoint x="730" y="2091" />
+              <mxPoint x="400" y="2091" />
+              <mxPoint x="400" y="2161" />
+            </Array>
+            <mxPoint x="870" y="2010" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-79" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-61" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#3399ff;fontSize=10;fontColor=#3399ff;" target="oDE2eAoZzIGxH4k-oU_C-62" value="carga de dados brutos/tratados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-80" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d79b00;fontSize=10;fontColor=#b37700;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-65" value="leitura de dados curados">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="518" y="2350" />
+              <mxPoint x="350" y="2350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-81" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d79b00;fontSize=10;fontColor=#b37700;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-66" value="leitura de dados curados">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="622" y="2350" />
+              <mxPoint x="790" y="2350" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-82" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-65" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#6c8ebf;fontSize=10;fontColor=#3a5a8a;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.3;entryY=0;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-68" value="log de experimentos, métricas e modelos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-83" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-66" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#0e8088;fontSize=10;fontColor=#0e8088;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.9;entryY=0;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-68" value="log de experimentos, métricas e modelos">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-84" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d6b656;fontSize=10;fontColor=#8a7020;exitX=1;exitY=0.4;exitDx=0;exitDy=0;entryX=0;entryY=0.4;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-69" value="trigger: novo modelo em Staging">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-85" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#b85450;fontSize=10;fontColor=#b85450;exitX=0;exitY=0.7;exitDx=0;exitDy=0;entryX=1;entryY=0.7;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-68" value="promove → Production (se aprovado)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-86" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#d6b656;fontSize=10;fontColor=#8a7020;exitX=0.4;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-73" value="carrega modelo Production (pyfunc)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="2750" />
+              <mxPoint x="190" y="2750" />
+              <mxPoint x="190" y="2896" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-87" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-74" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#555555;startArrow=classic;startFill=1;endArrow=classic;endFill=1;fontSize=10;fontColor=#555555;" target="oDE2eAoZzIGxH4k-oU_C-73" value="requisição de previsão&lt;br&gt;⇔&lt;br&gt;sugestão de irrigação">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-88" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-76" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#9673a6;fontSize=10;fontColor=#9673a6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-74" value="acesso via navegador (HTTP)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-89" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-73" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#b85450;fontSize=10;fontColor=#b85450;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-70" value="loga cada previsão (input/output)">
+          <mxGeometry relative="1" x="-0.2173" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="470" y="2850" />
+              <mxPoint x="1368" y="2850" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-90" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;strokeColor=#b85450;fontSize=10;fontColor=#b85450;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-69" value="alerta / sugestão de retrain">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-91" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;verticalAlign=top;align=left;fontSize=12;fontStyle=1;spacingLeft=10;spacingTop=6;" value="Legenda" vertex="1">
+          <mxGeometry height="290" width="360" x="1460" y="2766" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-92" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="16" width="20" x="1479.996923076923" y="2797.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-93" parent="1" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;" value="Fontes externas" vertex="1">
+          <mxGeometry height="24" width="240" x="1507.996923076923" y="2793.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-94" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry height="16" width="20" x="1479.996923076923" y="2825.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-95" parent="1" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;" value="SOIL / ambiente local" vertex="1">
+          <mxGeometry height="24" width="240" x="1507.996923076923" y="2821.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-96" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b0e3e6;strokeColor=#0e8088;" value="" vertex="1">
+          <mxGeometry height="16" width="20" x="1479.996923076923" y="2853.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-97" parent="1" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;" value="Equipe de pesquisa (externa)" vertex="1">
+          <mxGeometry height="24" width="240" x="1507.996923076923" y="2849.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-98" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="" vertex="1">
+          <mxGeometry height="16" width="20" x="1479.996923076923" y="2881.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-99" parent="1" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;" value="MLflow (tracking + registry)" vertex="1">
+          <mxGeometry height="24" width="240" x="1507.996923076923" y="2877.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-100" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" value="" vertex="1">
+          <mxGeometry height="16" width="20" x="1479.996923076923" y="2909.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-101" parent="1" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;" value="Governança: validação e monitoramento" vertex="1">
+          <mxGeometry height="24" width="240" x="1507.996923076923" y="2905.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-102" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="" vertex="1">
+          <mxGeometry height="16" width="20" x="1479.996923076923" y="2937.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-103" parent="1" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;" value="AWS Cloud (S3 / EC2 / API / Streamlit)" vertex="1">
+          <mxGeometry height="24" width="240" x="1507.996923076923" y="2933.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-104" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" value="" vertex="1">
+          <mxGeometry height="16" width="20" x="1479.996923076923" y="2965.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-105" parent="1" style="text;html=1;fontSize=10;align=left;verticalAlign=middle;" value="Usuário final" vertex="1">
+          <mxGeometry height="24" width="240" x="1507.996923076923" y="2961.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-106" parent="1" style="text;html=1;fontSize=9;fontStyle=2;align=left;fontColor=#888888;" value="Setas tracejadas = laços de governança/feedback (validação e monitoramento). &lt;br&gt;&quot;(novo)&quot; = componente que não existe na arquitetura atual." vertex="1">
+          <mxGeometry height="55" width="260" x="1479.996923076923" y="2995.996923076923" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-108" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="Pipeline" vertex="1">
+          <mxGeometry height="130" width="140" x="-659.9968965517241" y="1148.5003448275863" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-109" parent="oDE2eAoZzIGxH4k-oU_C-108" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- Parâmetros" vertex="1">
+          <mxGeometry height="15" width="140" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-110" parent="oDE2eAoZzIGxH4k-oU_C-108" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="8" width="140" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-111" parent="oDE2eAoZzIGxH4k-oU_C-108" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="&lt;div&gt;+ rodar()&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ mapa()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ relacionar(pipeline)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ combinar(Pipeline)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ dropar(&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;α&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;0..1&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="77" width="140" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-112" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="Modelo" vertex="1">
+          <mxGeometry height="130" width="140" x="-449.99689655172415" y="1143.5003448275863" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-113" parent="oDE2eAoZzIGxH4k-oU_C-112" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- Parâmetros" vertex="1">
+          <mxGeometry height="15" width="140" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-114" parent="oDE2eAoZzIGxH4k-oU_C-112" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="8" width="140" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-115" parent="oDE2eAoZzIGxH4k-oU_C-112" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="&lt;div&gt;+ treinar(pipeline)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ prever()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ metadados()&lt;/span&gt;&lt;/div&gt;&lt;div&gt;+ combinar(Modelo)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ dropar(Modelo&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="77" width="140" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-116" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-117" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-117" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="Fonte de Dados" vertex="1">
+          <mxGeometry height="25" width="140" x="-859.4968965517241" y="1148.5003448275863" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-118" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="Predição" vertex="1">
+          <mxGeometry height="90" width="140" x="-259.99689655172415" y="1143.5003448275863" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-119" parent="oDE2eAoZzIGxH4k-oU_C-118" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="- Pipeline&lt;br&gt;- Modelo" vertex="1">
+          <mxGeometry height="30" width="140" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-120" parent="oDE2eAoZzIGxH4k-oU_C-118" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" value="" vertex="1">
+          <mxGeometry height="8" width="140" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-121" parent="oDE2eAoZzIGxH4k-oU_C-118" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="&lt;div&gt;+ rodar()&lt;/div&gt;" vertex="1">
+          <mxGeometry height="22" width="140" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-122" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-123" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-123" parent="1" style="fontStyle=1;whiteSpace=wrap;html=1;" value="INMET" vertex="1">
+          <mxGeometry height="30" width="50" x="-899.9968965517241" y="1068.5003448275863" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-124" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-125" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-125" parent="1" style="fontStyle=1;whiteSpace=wrap;html=1;" value="ERA5" vertex="1">
+          <mxGeometry height="30" width="45" x="-811.9968965517241" y="1068.5003448275863" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-126" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-127" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-117">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-127" parent="1" style="fontStyle=1;whiteSpace=wrap;html=1;" value="Xavier" vertex="1">
+          <mxGeometry height="30" width="70" x="-739.9968965517241" y="1068.5003448275863" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-128" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-115" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-119">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-129" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="oDE2eAoZzIGxH4k-oU_C-113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-130" edge="1" parent="1" source="oDE2eAoZzIGxH4k-oU_C-131" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="oDE2eAoZzIGxH4k-oU_C-111">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-131" parent="1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="&lt;span data-teams=&quot;true&quot;&gt;Strategy&lt;/span&gt;" vertex="1">
+          <mxGeometry height="70" width="140" x="-859.4968965517241" y="1293.5003448275863" as="geometry" />
+        </mxCell>
+        <mxCell id="oDE2eAoZzIGxH4k-oU_C-132" parent="oDE2eAoZzIGxH4k-oU_C-131" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;" value="&lt;div&gt;+ limpar(dados)&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ transformar(dados)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="40" width="140" y="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Cópia do Arquitetura Atual - MLOps SOIL" id="-C3Tx3jadVifn0mIaz2J">
+    <mxGraphModel dx="2867" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1950" pageHeight="900" math="0" shadow="0" adaptiveColors="simple">
+      <root>
+        <mxCell id="PQquFgqErPr09HlkWHZF-0" />
+        <mxCell id="PQquFgqErPr09HlkWHZF-1" parent="PQquFgqErPr09HlkWHZF-0" />
+        <mxCell id="PQquFgqErPr09HlkWHZF-38" parent="PQquFgqErPr09HlkWHZF-1" style="text;html=1;fontSize=20;fontStyle=1;align=left;verticalAlign=middle;fontColor=#1a1a1a;" value="Framework de Pesquisa — Proposta de Revisão (diagrama de classes)" vertex="1">
+          <mxGeometry height="30" width="900" x="20.001538461538587" y="930.0046153846152" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-39" parent="PQquFgqErPr09HlkWHZF-1" style="text;html=1;fontSize=12;fontStyle=2;align=left;verticalAlign=middle;fontColor=#666666;" value="Base: soil.drawio enviado pela equipe. Em azul: classes originais com adições. Em verde: classes novas propostas. Preto: mantido como estava." vertex="1">
+          <mxGeometry height="24" width="1000" x="20.001538461538587" y="960.0046153846152" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-40" parent="PQquFgqErPr09HlkWHZF-1" style="fontStyle=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="INMET" vertex="1">
+          <mxGeometry height="30" width="70" x="40.00153846153859" y="1050.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-41" parent="PQquFgqErPr09HlkWHZF-1" style="fontStyle=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="ERA5" vertex="1">
+          <mxGeometry height="30" width="70" x="120.00153846153859" y="1050.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-42" parent="PQquFgqErPr09HlkWHZF-1" style="fontStyle=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" value="Xavier" vertex="1">
+          <mxGeometry height="30" width="70" x="200.0015384615386" y="1050.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-43" parent="PQquFgqErPr09HlkWHZF-1" style="fontStyle=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=9;" value="S3 (curado) – novo" vertex="1">
+          <mxGeometry height="30" width="90" x="280.0015384615386" y="1050.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-44" parent="PQquFgqErPr09HlkWHZF-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" value="Fonte de Dados (revisado)" vertex="1">
+          <mxGeometry height="90" width="340" x="40" y="1106" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-45" parent="PQquFgqErPr09HlkWHZF-44" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="- nome: str" vertex="1">
+          <mxGeometry height="15" width="340" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-46" parent="PQquFgqErPr09HlkWHZF-44" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="340" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-47" parent="PQquFgqErPr09HlkWHZF-44" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="+ extrair(): DataFrame  (novo)&#xa;+ validar_schema()  (novo)" vertex="1">
+          <mxGeometry height="35" width="340" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-48" parent="PQquFgqErPr09HlkWHZF-1" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;" value="EstrategiaTransformacao «Strategy» (mantido)" vertex="1">
+          <mxGeometry height="80" width="260" x="40" y="1216" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-49" parent="PQquFgqErPr09HlkWHZF-48" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=11;" value="+ limpar(dados)&#xa;+ transformar(dados)" vertex="1">
+          <mxGeometry height="50" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-50" parent="PQquFgqErPr09HlkWHZF-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" value="Pipeline (revisado)" vertex="1">
+          <mxGeometry height="220" width="300" x="488.0015384615386" y="1106.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-51" parent="PQquFgqErPr09HlkWHZF-50" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="- parametros: dict&#xa;- estado_ajustado: dict  (novo – separa config de estado treinado)" vertex="1">
+          <mxGeometry height="30" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-52" parent="PQquFgqErPr09HlkWHZF-50" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="300" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-53" parent="PQquFgqErPr09HlkWHZF-50" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ rodar()&#xa;+ mapa()&#xa;+ relacionar(pipeline)&#xa;+ combinar(Pipeline) → Pipeline&#xa;+ dropar(α) 0..1 → Pipeline&#xa;+ ajustar(dados)  (novo)&#xa;+ transformar(dados)  (novo)&#xa;+ esquema_entrada()/esquema_saida()  (novo)&#xa;+ salvar(caminho)  (novo)&#xa;+ carregar(caminho) «classmethod»  (novo)" vertex="1">
+          <mxGeometry height="152" width="300" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-54" parent="PQquFgqErPr09HlkWHZF-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" value="Modelo (revisado)" vertex="1">
+          <mxGeometry height="200" width="300" x="864.0015384615385" y="1106.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-55" parent="PQquFgqErPr09HlkWHZF-54" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="- parametros: dict&#xa;- versao: str  (novo)" vertex="1">
+          <mxGeometry height="30" width="300" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-56" parent="PQquFgqErPr09HlkWHZF-54" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="300" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-57" parent="PQquFgqErPr09HlkWHZF-54" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ treinar(pipeline)&#xa;+ prever()&#xa;+ metadados()&#xa;+ combinar(Modelo) → Modelo&#xa;+ dropar(Modelo)&#xa;+ avaliar(pipeline_teste): Metricas  (novo)&#xa;+ salvar(caminho)  (novo)&#xa;+ carregar(caminho) «classmethod»  (novo)&#xa;+ registrar(tracker: RastreadorExperimento)  (novo)" vertex="1">
+          <mxGeometry height="132" width="300" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-58" parent="PQquFgqErPr09HlkWHZF-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#1a1a1a;" value="Predição (revisado)" vertex="1">
+          <mxGeometry height="120" width="260" x="1224.0015384615385" y="1106.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-59" parent="PQquFgqErPr09HlkWHZF-58" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="- pipeline: Pipeline&#xa;- modelo: Modelo" vertex="1">
+          <mxGeometry height="30" width="260" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-60" parent="PQquFgqErPr09HlkWHZF-58" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="260" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-61" parent="PQquFgqErPr09HlkWHZF-58" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ rodar()&#xa;+ validar(entrada): bool  (novo)&#xa;+ versao_modelo()  (novo)" vertex="1">
+          <mxGeometry height="52" width="260" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-62" parent="PQquFgqErPr09HlkWHZF-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" value="Metricas (novo)" vertex="1">
+          <mxGeometry height="90" width="220" x="488.0015384615386" y="1376.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-63" parent="PQquFgqErPr09HlkWHZF-62" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="- valores: dict" vertex="1">
+          <mxGeometry height="15" width="220" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-64" parent="PQquFgqErPr09HlkWHZF-62" style="line;strokeWidth=1;fillColor=none;spacingTop=-1;" value="" vertex="1">
+          <mxGeometry height="8" width="220" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-65" parent="PQquFgqErPr09HlkWHZF-62" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ comparar(baseline): bool&#xa;+ para_dict(): dict" vertex="1">
+          <mxGeometry height="35" width="220" y="53" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-66" parent="PQquFgqErPr09HlkWHZF-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" value="RastreadorExperimento «interface» (novo)" vertex="1">
+          <mxGeometry height="100" width="280" x="748.0015384615385" y="1376.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-67" parent="PQquFgqErPr09HlkWHZF-66" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ log_param(chave, valor)&#xa;+ log_metrica(chave, valor)&#xa;+ log_artefato(caminho)&#xa;+ registrar_modelo(modelo, pipeline, metricas)" vertex="1">
+          <mxGeometry height="70" width="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-68" parent="PQquFgqErPr09HlkWHZF-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=0;" value="MLflowTracker (novo)&#xa;implementação concreta usando MLflow" vertex="1">
+          <mxGeometry height="60" width="280" x="748.0015384615385" y="1516.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-69" parent="PQquFgqErPr09HlkWHZF-1" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=0;resizeParentMax=0;resizeLast=0;collapsible=0;marginBottom=0;html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#1a1a1a;" value="RepositorioModelos (novo)" vertex="1">
+          <mxGeometry height="100" width="340" x="1068.0015384615385" y="1376.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-70" parent="PQquFgqErPr09HlkWHZF-69" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=6;fontSize=10;" value="+ obter(nome, estagio=&#39;Production&#39;): Predição&#xa;+ registrar(modelo, pipeline, metricas)&#xa;+ promover(nome, versao, estagio)" vertex="1">
+          <mxGeometry height="70" width="340" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-71" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-40" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#82b366;entryX=0.103;entryY=-0.008;entryDx=0;entryDy=0;entryPerimeter=0;" target="PQquFgqErPr09HlkWHZF-44">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="1100" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-72" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.339;entryY=0.001;entryDx=0;entryDy=0;strokeColor=#82b366;entryPerimeter=0;" target="PQquFgqErPr09HlkWHZF-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-73" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.574;entryY=-0.008;entryDx=0;entryDy=0;strokeColor=#82b366;entryPerimeter=0;" target="PQquFgqErPr09HlkWHZF-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-74" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.838;entryY=-0.005;entryDx=0;entryDy=0;strokeColor=#82b366;entryPerimeter=0;" target="PQquFgqErPr09HlkWHZF-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-75" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;" target="PQquFgqErPr09HlkWHZF-51" value="fornece dados">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-76" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontSize=9;entryX=-0.006;entryY=0.544;entryDx=0;entryDy=0;entryPerimeter=0;" target="PQquFgqErPr09HlkWHZF-53" value="injetada em">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-77" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;" target="PQquFgqErPr09HlkWHZF-55" value="alimenta treinar()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-78" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=9;" target="PQquFgqErPr09HlkWHZF-59" value="alimenta rodar()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-79" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="PQquFgqErPr09HlkWHZF-58" value="(novo) referência direta — Predição também guarda o Pipeline usado">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="1161" />
+              <mxPoint x="810" y="1080.03" />
+              <mxPoint x="1290" y="1080.03" />
+              <mxPoint x="1290" y="1106.03" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-80" edge="1" parent="PQquFgqErPr09HlkWHZF-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="PQquFgqErPr09HlkWHZF-66" value="(novo) &lt;br&gt;usa via injeção &lt;br&gt;de dependência">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="980" y="1310" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-81" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-68" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;endArrow=block;endFill=0;endSize=14;strokeColor=#82b366;fontColor=#3a7a3a;fontSize=9;" target="PQquFgqErPr09HlkWHZF-66" value="implementa">
+          <mxGeometry relative="1" x="0.176" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-82" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;exitX=0.09;exitY=1.003;exitDx=0;exitDy=0;exitPerimeter=0;" target="PQquFgqErPr09HlkWHZF-62" value="(novo) retorna via avaliar()">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-83" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-54" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;" target="PQquFgqErPr09HlkWHZF-69" value="(novo) registrar(modelo, pipeline, metricas)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-84" edge="1" parent="PQquFgqErPr09HlkWHZF-1" source="PQquFgqErPr09HlkWHZF-69" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#1565c0;fontColor=#1565c0;fontSize=9;exitX=0.75;exitY=0;exitDx=0;exitDy=0;" target="PQquFgqErPr09HlkWHZF-58" value="(novo) obter() retorna instância pronta p/ servir">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-85" parent="PQquFgqErPr09HlkWHZF-1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;verticalAlign=top;align=left;fontSize=12;fontStyle=1;spacingLeft=10;spacingTop=6;" value="Legenda" vertex="1">
+          <mxGeometry height="130" width="1000" x="40.00153846153859" y="1622.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-86" parent="PQquFgqErPr09HlkWHZF-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#666666;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="60.00153846153859" y="1654.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-87" parent="PQquFgqErPr09HlkWHZF-1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="Classe original, mantida sem alteração (ex: EstrategiaTransformacao)" vertex="1">
+          <mxGeometry height="26" width="450" x="94.00153846153859" y="1650.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-88" parent="PQquFgqErPr09HlkWHZF-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="60.00153846153859" y="1686.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-89" parent="PQquFgqErPr09HlkWHZF-1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="Classe original, revisada — ganhou atributos/métodos (marcados &quot;novo&quot;)" vertex="1">
+          <mxGeometry height="26" width="450" x="94.00153846153859" y="1682.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-90" parent="PQquFgqErPr09HlkWHZF-1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="" vertex="1">
+          <mxGeometry height="18" width="24" x="60.00153846153859" y="1717.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-91" parent="PQquFgqErPr09HlkWHZF-1" style="text;html=1;fontSize=11;align=left;verticalAlign=middle;" value="Classe nova, proposta nesta análise" vertex="1">
+          <mxGeometry height="26" width="450" x="94.00153846153859" y="1713.0046153846151" as="geometry" />
+        </mxCell>
+        <mxCell id="PQquFgqErPr09HlkWHZF-92" parent="PQquFgqErPr09HlkWHZF-1" style="text;html=1;fontSize=10;fontStyle=2;align=left;fontColor=#888888;" value="Setas tracejadas azuis = relações novas propostas. &lt;br&gt;Ver relatório &quot;analise_critica_framework_integracao.md&quot; para a justificativa de cada item." vertex="1">
+          <mxGeometry height="80" width="470" x="540.0015384615385" y="1649.0046153846151" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

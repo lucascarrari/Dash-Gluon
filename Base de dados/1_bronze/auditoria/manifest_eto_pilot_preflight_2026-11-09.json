@@ -1,0 +1,17 @@
+{
+  "endpoint": "/v1/archive",
+  "model": "era5_seamless",
+  "location_id": "BR_BA_BARREIRAS",
+  "variable": "et0_fao_evapotranspiration",
+  "date": "2026-10-07",
+  "estimated_calls": 0.0714285714,
+  "retry_margin": 0.0142857143,
+  "http_request_made": false,
+  "http_status": null,
+  "status": "blocked_before_http",
+  "preflight_dns": "Acesso negado in Codex execution environment",
+  "preflight_tcp": "not run after DNS failure",
+  "billed_calls_counted": 0,
+  "auto_retry": false,
+  "note": "User PowerShell previously passed DNS/TCP; pilot script prepared for local execution."
+}

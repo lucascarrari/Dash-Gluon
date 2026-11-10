@@ -1,0 +1,156 @@
+﻿{
+    "batch_id":  "era5_hourly_batch_007",
+    "model":  "era5",
+    "models_parameter":  "era5",
+    "endpoint":  "https://archive-api.open-meteo.com/v1/archive",
+    "variable_api":  [
+                         "temperature_2m",
+                         "dew_point_2m",
+                         "relative_humidity_2m",
+                         "vapour_pressure_deficit",
+                         "soil_moisture_0_to_7cm",
+                         "soil_moisture_7_to_28cm",
+                         "soil_moisture_28_to_100cm",
+                         "soil_moisture_100_to_255cm",
+                         "soil_temperature_0_to_7cm",
+                         "soil_temperature_7_to_28cm",
+                         "soil_temperature_28_to_100cm",
+                         "soil_temperature_100_to_255cm"
+                     ],
+    "canonical_variables":  [
+                                "temperature_2m",
+                                "dew_point_2m",
+                                "relative_humidity_2m",
+                                "vapour_pressure_deficit",
+                                "soil_moisture_0_to_7cm",
+                                "soil_moisture_7_to_28cm",
+                                "soil_moisture_28_to_100cm",
+                                "soil_moisture_100_to_255cm",
+                                "soil_temperature_0_to_7cm",
+                                "soil_temperature_7_to_28cm",
+                                "soil_temperature_28_to_100cm",
+                                "soil_temperature_100_to_255cm"
+                            ],
+    "frequency":  "hourly",
+    "timezone":  "GMT",
+    "start_date":  "2024-10-08",
+    "end_date":  "2026-10-07",
+    "days":  730,
+    "location_id":  "BR_MT_SAPEZAL",
+    "location_name":  "Sapezal (ChapadÃ£o Parecis)",
+    "state":  "MT",
+    "macro_region":  "Centro-Oeste",
+    "requested_latitude":  -12.9917,
+    "requested_longitude":  -58.7656,
+    "api_latitude":  -13.0,
+    "api_longitude":  -58.75,
+    "http_status":  200,
+    "content_type":  "application/json; charset=utf-8",
+    "hours_returned":  17520,
+    "first_hour":  "2024-10-08T00:00",
+    "last_hour":  "2026-10-07T23:00",
+    "variable_quality":  {
+                             "temperature_2m":  {
+                                                    "expected_unit":  "°C",
+                                                    "api_unit":  "°C",
+                                                    "hours_returned":  17520,
+                                                    "valid_values":  17520,
+                                                    "null_values":  0,
+                                                    "unit_match":  true
+                                                },
+                             "dew_point_2m":  {
+                                                  "expected_unit":  "°C",
+                                                  "api_unit":  "°C",
+                                                  "hours_returned":  17520,
+                                                  "valid_values":  17520,
+                                                  "null_values":  0,
+                                                  "unit_match":  true
+                                              },
+                             "relative_humidity_2m":  {
+                                                          "expected_unit":  "%",
+                                                          "api_unit":  "%",
+                                                          "hours_returned":  17520,
+                                                          "valid_values":  17520,
+                                                          "null_values":  0,
+                                                          "unit_match":  true
+                                                      },
+                             "vapour_pressure_deficit":  {
+                                                             "expected_unit":  "kPa",
+                                                             "api_unit":  "kPa",
+                                                             "hours_returned":  17520,
+                                                             "valid_values":  17520,
+                                                             "null_values":  0,
+                                                             "unit_match":  true
+                                                         },
+                             "soil_moisture_0_to_7cm":  {
+                                                            "expected_unit":  "m³/m³",
+                                                            "api_unit":  "m³/m³",
+                                                            "hours_returned":  17520,
+                                                            "valid_values":  17520,
+                                                            "null_values":  0,
+                                                            "unit_match":  true
+                                                        },
+                             "soil_moisture_7_to_28cm":  {
+                                                             "expected_unit":  "m³/m³",
+                                                             "api_unit":  "m³/m³",
+                                                             "hours_returned":  17520,
+                                                             "valid_values":  17520,
+                                                             "null_values":  0,
+                                                             "unit_match":  true
+                                                         },
+                             "soil_moisture_28_to_100cm":  {
+                                                               "expected_unit":  "m³/m³",
+                                                               "api_unit":  "m³/m³",
+                                                               "hours_returned":  17520,
+                                                               "valid_values":  17520,
+                                                               "null_values":  0,
+                                                               "unit_match":  true
+                                                           },
+                             "soil_moisture_100_to_255cm":  {
+                                                                "expected_unit":  "m³/m³",
+                                                                "api_unit":  "m³/m³",
+                                                                "hours_returned":  17520,
+                                                                "valid_values":  17520,
+                                                                "null_values":  0,
+                                                                "unit_match":  true
+                                                            },
+                             "soil_temperature_0_to_7cm":  {
+                                                               "expected_unit":  "°C",
+                                                               "api_unit":  "°C",
+                                                               "hours_returned":  17520,
+                                                               "valid_values":  17520,
+                                                               "null_values":  0,
+                                                               "unit_match":  true
+                                                           },
+                             "soil_temperature_7_to_28cm":  {
+                                                                "expected_unit":  "°C",
+                                                                "api_unit":  "°C",
+                                                                "hours_returned":  17520,
+                                                                "valid_values":  17520,
+                                                                "null_values":  0,
+                                                                "unit_match":  true
+                                                            },
+                             "soil_temperature_28_to_100cm":  {
+                                                                  "expected_unit":  "°C",
+                                                                  "api_unit":  "°C",
+                                                                  "hours_returned":  17520,
+                                                                  "valid_values":  17520,
+                                                                  "null_values":  0,
+                                                                  "unit_match":  true
+                                                              },
+                             "soil_temperature_100_to_255cm":  {
+                                                                   "expected_unit":  "°C",
+                                                                   "api_unit":  "°C",
+                                                                   "hours_returned":  17520,
+                                                                   "valid_values":  17520,
+                                                                   "null_values":  0,
+                                                                   "unit_match":  true
+                                                               }
+                         },
+    "valid":  true,
+    "estimated_billed_calls":  62.571428571428569,
+    "retry_margin_units":  12.514285714285714,
+    "request_url":  "https://archive-api.open-meteo.com/v1/archive?latitude=-12.9917\u0026longitude=-58.7656\u0026start_date=2024-10-08\u0026end_date=2026-10-07\u0026hourly=temperature_2m,dew_point_2m,relative_humidity_2m,vapour_pressure_deficit,soil_moisture_0_to_7cm,soil_moisture_7_to_28cm,soil_moisture_28_to_100cm,soil_moisture_100_to_255cm,soil_temperature_0_to_7cm,soil_temperature_7_to_28cm,soil_temperature_28_to_100cm,soil_temperature_100_to_255cm\u0026timezone=GMT\u0026models=era5",
+    "raw_file":  "C:\\Users\\User\\OneDrive - Firjan\\Área de Trabalho\\Base de dados\\1_bronze\\era5\\variables_horarias\\raw\\BR_MT_SAPEZAL_2024-10-08_2026-10-07.json",
+    "parse_error":  null
+}

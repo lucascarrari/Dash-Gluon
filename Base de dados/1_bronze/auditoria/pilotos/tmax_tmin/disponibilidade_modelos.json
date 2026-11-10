@@ -1,0 +1,51 @@
+{
+  "date_checked": "2026-11-06",
+  "tested_location": "BR_AC_CRUZEIRO_DO_SUL",
+  "timezone": "GMT",
+  "tests": [
+    {
+      "model": "era5_land",
+      "variables": [
+        "temperature_2m_max",
+        "temperature_2m_min"
+      ],
+      "valid_days": 7,
+      "http_status": 200,
+      "unit": "°C",
+      "end": "2026-10-30",
+      "null_days": 0,
+      "start": "2026-10-24"
+    },
+    {
+      "model": "era5",
+      "variables": [
+        "temperature_2m_max",
+        "temperature_2m_min"
+      ],
+      "valid_days": 7,
+      "http_status": 200,
+      "unit": "°C",
+      "end": "2026-10-30",
+      "null_days": 0,
+      "start": "2026-10-24"
+    }
+  ],
+  "previous_pilot": {
+    "tmax": "null",
+    "models": [
+      "era5_land",
+      "era5"
+    ],
+    "date": "2026-10-31",
+    "tmin": "null"
+  },
+  "latest_complete_at_tested_point": "2026-10-30",
+  "period_selected_for_all_regional_products": {
+    "days": 730,
+    "end": "2026-10-07",
+    "start": "2024-10-08"
+  },
+  "all_24_region_points_reused_from_complete_era5_land_daily_bronze": true,
+  "availability_is_point_specific": true,
+  "documentation_delay": "5 days nominal (consulted Open-Meteo docs)"
+}

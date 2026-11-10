@@ -1,0 +1,38 @@
+{
+  "batch_id": "eto_seamless_regional_batch_004",
+  "model": "era5_seamless",
+  "variable": "et0_fao_evapotranspiration",
+  "period": "2024-10-08/2026-10-07",
+  "points": [
+    {
+      "location_id": "BR_MS_DOURADOS",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4536.857
+    },
+    {
+      "location_id": "BR_MT_CUIABA",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4484.714
+    },
+    {
+      "location_id": "BR_MT_RONDONOPOLIS",
+      "http_status": 200,
+      "valid": 730,
+      "nulls": 0,
+      "validated": true,
+      "cost": 52.142857142857146,
+      "remaining": 4432.571
+    }
+  ],
+  "estimated_calls": 156.42857142857144,
+  "retry_margin_units": 31.285714285714292,
+  "timezone": "GMT"
+}

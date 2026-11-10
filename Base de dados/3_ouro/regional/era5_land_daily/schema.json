@@ -1,0 +1,39 @@
+{
+  "dataset": "ERA5-Land regional daily maximum and minimum air temperature",
+  "columns": [
+    "date",
+    "location_id",
+    "location_name",
+    "state",
+    "macro_region",
+    "timezone",
+    "latitude",
+    "longitude",
+    "tmax_c",
+    "tmin_c",
+    "unit",
+    "source_model",
+    "source_file",
+    "quality_flag"
+  ],
+  "units": {
+    "tmax_c": "°C",
+    "longitude": "degrees_east",
+    "tmin_c": "°C",
+    "latitude": "degrees_north"
+  },
+  "frequency": "daily",
+  "source_model_by_variable": {
+    "tmin_c": "era5_land",
+    "tmax_c": "era5_land"
+  },
+  "period": {
+    "start": "2024-10-08",
+    "end": "2026-10-07",
+    "days": 730
+  },
+  "locations": 24,
+  "states": 11,
+  "rows": 17520,
+  "timezone_semantics": "auto per coordinate; local daily boundary from original response"
+}

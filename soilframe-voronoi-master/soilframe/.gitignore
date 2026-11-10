@@ -1,0 +1,52 @@
+# Credenciais e ambiente local
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Dados brutos e caches grandes
+data/lst_nc/*
+data/swi_nc/*
+data/et0_nc/*
+data/era5land/*
+!data/raw/.gitkeep
+!data/lst_nc/.gitkeep
+!data/swi_nc/.gitkeep
+!data/et0_nc/.gitkeep
+
+
+# Artefatos gerados localmente
+outputs/models/*
+outputs/predictions/*
+outputs/pipeline_results/*
+
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Dados grandes
+data/swi_nc/
+data/et0_nc/
+data/raw/
+
+# Arquivos gerados
+outputs/

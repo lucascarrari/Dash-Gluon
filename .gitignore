@@ -1,0 +1,33 @@
+# Ambientes, caches e dependencias instaladas localmente
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Credenciais e configuracao privada
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Artefatos gerados pelos treinos e execucoes locais
+outputs/
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.db
+*.log
+*.pid
+
+# Recursos auxiliares da auditoria; scripts e resultados JSON sao versionados
+/validacao/runtime/
+/validacao/deps/
+/validacao/wheels/
+/validacao/treinos/
+/validacao/diagnostico_modelo/
+
+# Sistema operacional
+Thumbs.db
+.DS_Store

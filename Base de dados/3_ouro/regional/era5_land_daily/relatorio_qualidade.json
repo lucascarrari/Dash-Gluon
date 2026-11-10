@@ -1,0 +1,26 @@
+{
+  "dataset": "tmax_tmin_diario_norte_centro_oeste",
+  "model": "era5_land",
+  "period": "2024-10-08/2026-10-07",
+  "locations": 24,
+  "states": 11,
+  "rows": 17520,
+  "expected_rows": 17520,
+  "valid_tmax": 17520,
+  "missing_tmax": 0,
+  "valid_tmin": 17520,
+  "missing_tmin": 0,
+  "duplicates": 0,
+  "units": "°C",
+  "frequency": "daily",
+  "validation_status": "complete_reused",
+  "source_quality": "Source Lake quality report records 100% coverage for tmax_c and tmin_c: 48,910 of 48,910 rows across 67 locations. Regional values were validated directly from original Bronze responses.",
+  "source_model_by_variable": {
+    "tmin_c": "era5_land",
+    "tmax_c": "era5_land"
+  },
+  "latest_null_pilot_note": "2026-10-31 null pilot is outside this adopted complete interval ending 2026-10-07.",
+  "spatial_scope": "Discrete named points; no continuous coverage claim.",
+  "timezone_semantics": "auto/local timezone per location",
+  "alignment_note": "Daily boundaries differ from GMT ETo and precipitation products; harmonize before joining by day."
+}

@@ -1,0 +1,29 @@
+{
+  "dataset": "Regional daily ETo",
+  "columns": [
+    "date",
+    "location_id",
+    "state",
+    "macro_region",
+    "latitude",
+    "longitude",
+    "api_latitude",
+    "api_longitude",
+    "eto_mm",
+    "unit",
+    "source_model",
+    "source_file",
+    "quality_flag"
+  ],
+  "units": {
+    "eto_mm": "mm/day"
+  },
+  "frequency": "daily",
+  "source_model_by_variable": {
+    "eto_mm": "era5_seamless"
+  },
+  "full_period": "2024-10-08/2026-10-07",
+  "status": "incomplete_pending_full_range_response",
+  "valid_pilot_date": "2026-10-01",
+  "pilot_only": true
+}

@@ -1,0 +1,2 @@
+"date";"location_id";"state";"macro_region";"latitude";"longitude";"api_latitude";"api_longitude";"eto_mm";"unit";"source_model";"source_file";"quality_flag"
+"2026-10-01";"BR_AC_CRUZEIRO_DO_SUL";"AC";"Norte";"-7.6311";"-72.6703";"-7,5999985";"-72,7";"3.39";"mm/day";"era5_seamless";"pilot_2026-10-01.json";"valid_pilot_only"

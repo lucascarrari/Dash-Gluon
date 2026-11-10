@@ -1,0 +1,487 @@
+﻿[
+    {
+        "arquivo":  ".gitignore",
+        "bytes":  898,
+        "sha256":  "8EED650500EC1F9765FFB126DBF1C50D6BD104C71234C6838F75200E9C615B62"
+    },
+    {
+        "arquivo":  "Apresentação SOIL - AutoML.pdf",
+        "bytes":  219483,
+        "sha256":  "259224F3B8D26C8769118B35FC493AF603BE89F34C2CC1B3FCD9C6B786F4FEEE"
+    },
+    {
+        "arquivo":  "baixar_aquacrop_brasil_3anos_lakehouse.py",
+        "bytes":  7049,
+        "sha256":  "26BD387FD1442481D9BD6C1E020179C251DF6C70484E3B6F19F0C89D2EA885FB"
+    },
+    {
+        "arquivo":  "baixar_aquacrop_brasil_5anos_lakehouse.py",
+        "bytes":  7569,
+        "sha256":  "DA68DB90967BF49E6AA391DB91CB5C7F978162D5663F0B4DFE7999C66ECC29F9"
+    },
+    {
+        "arquivo":  "baixar_aquacrop_brasil_lakehouse.py",
+        "bytes":  4421,
+        "sha256":  "61D9446FAB7CF654F4C1990902AFF7E1F37C71F8C2F1B6DC23751D5A2398D14C"
+    },
+    {
+        "arquivo":  "baixar_aquacrop_era5_mg.py",
+        "bytes":  4207,
+        "sha256":  "C7CE0B1527FB5A1EBA62D5433BC58A6E1A51E4BA60C9851E9F73252BD68D3C90"
+    },
+    {
+        "arquivo":  "baseline_dummy_classifier.py",
+        "bytes":  8489,
+        "sha256":  "AED08C8DEF1B25E00C94D79F23956813F097E7A846B51C5156DCF38F3431A5B1"
+    },
+    {
+        "arquivo":  "demo_agro_voronoi.py",
+        "bytes":  4471,
+        "sha256":  "28AA50EB08F087950549D38A454669842E0EB2B5BB5FA49A16EE54EBA942BE5B"
+    },
+    {
+        "arquivo":  "iniciar_automl_continuo.bat",
+        "bytes":  676,
+        "sha256":  "EBDC6AE83DC4C6C8C31FDDACEE785816E46932DB681178C09B693D6D2DC30935"
+    },
+    {
+        "arquivo":  "iniciar_automl_continuo.ps1",
+        "bytes":  1006,
+        "sha256":  "A5F854304480E26503451C59B44D2A796E7BA9B563F7C6DBDDB3E285E4134C10"
+    },
+    {
+        "arquivo":  "treinar_automl_aquacrop.py",
+        "bytes":  4357,
+        "sha256":  "FDC8FBCB84ACFE6F3DB22D0E91A599161077DE81EA448A88590C843B1F1EF01E"
+    },
+    {
+        "arquivo":  "treinar_automl_continuo.py",
+        "bytes":  29290,
+        "sha256":  "0DD5BAA6FF015ED7E76375D5B7717467F76725A0FB46BB8B5D76DBABB3771252"
+    },
+    {
+        "arquivo":  "data\\era5land\\era5land_aquacrop_mg_2024.csv",
+        "bytes":  6910523,
+        "sha256":  "B85F1CCD0CEEF82EE23B16F35E26F05A3F61FCE776862FD6128F6FD9BF9E9F0E"
+    },
+    {
+        "arquivo":  "data\\era5land\\era5land_aquacrop_mg_2024.parquet",
+        "bytes":  630965,
+        "sha256":  "54F890DC1A204563ADA197B34ADDDB53978A9CAA2546ED97DF21DB165086175F"
+    },
+    {
+        "arquivo":  "data\\era5land\\aquacrop_files\\Abadia_dos_Dourados_3100104_2024.CLI",
+        "bytes":  218,
+        "sha256":  "40FA245837060E40D57A8B7280C6526A695BCE3764F1504E7C6D1CD243708BCF"
+    },
+    {
+        "arquivo":  "data\\era5land\\aquacrop_files\\Abadia_dos_Dourados_3100104_2024.ETo",
+        "bytes":  4289,
+        "sha256":  "0C3EE03F773DCF2BBEABCB18AD7E6C645C38F88FF1E4551A53BB7610FDCC4111"
+    },
+    {
+        "arquivo":  "data\\era5land\\aquacrop_files\\Abadia_dos_Dourados_3100104_2024.PLU",
+        "bytes":  4282,
+        "sha256":  "F266452860FF8415F739C24EB113A1AD37532C0A3ABFD4BD0620B4CD13197AC5"
+    },
+    {
+        "arquivo":  "data\\era5land\\aquacrop_files\\Abadia_dos_Dourados_3100104_2024.TMP",
+        "bytes":  8311,
+        "sha256":  "2ECB24BB9D901BA4117D2D46D162DC351E00176DB04101363EFD62BB4504E13B"
+    },
+    {
+        "arquivo":  "outputs\\models\\automl_aquacrop_v1\\leaderboard.csv",
+        "bytes":  258,
+        "sha256":  "5FF0133B503983F8D7EE1AD7A52AC18EB8F647D44C35344FF49F8B1E855844E4"
+    },
+    {
+        "arquivo":  "outputs\\models\\automl_aquacrop_v1\\metadata.json",
+        "bytes":  722,
+        "sha256":  "F64CD1B9947EB90934A31E6927EAF25B293AD6F3E5660688709E049CCC2F9727"
+    },
+    {
+        "arquivo":  "outputs\\models\\automl_checkpoint\\checkpoint_state.json",
+        "bytes":  2083,
+        "sha256":  "354EC05AE840C2B5DCCAE340606B1F50ACCD95F7FAD082B7F6CFF65DB761A7A1"
+    },
+    {
+        "arquivo":  "outputs\\models\\automl_checkpoint\\leaderboard_historico.csv",
+        "bytes":  5119,
+        "sha256":  "49CAC7D3A2E063CBA24DB25C84F4C480118B941C1006B26524BE2EAC3A2EEDB9"
+    },
+    {
+        "arquivo":  "outputs\\models\\automl_checkpoint\\melhor_modelo_metadata.json",
+        "bytes":  1701,
+        "sha256":  "6214FB8CDE947C1E2298F4C3216D114D99F1FE4305D7E23B626391469D772E2A"
+    },
+    {
+        "arquivo":  "soilframe\\.gitignore",
+        "bytes":  634,
+        "sha256":  "A903748B2B5AD663A11F9E9D69D1FC571370661A92A52E0B34AAFFDF0BD22D2D"
+    },
+    {
+        "arquivo":  "soilframe\\framework.png",
+        "bytes":  153844,
+        "sha256":  "973F97B1638B06C4E506A7DC6CFF844AED6280D4762DA927BAE2F79DA3C87665"
+    },
+    {
+        "arquivo":  "soilframe\\MLOps SOIL",
+        "bytes":  86515,
+        "sha256":  "038127744DDCCF58FB23709801705EC9771E2F4C2844475F0CFAD8E1FCE5172B"
+    },
+    {
+        "arquivo":  "soilframe\\pyproject.toml",
+        "bytes":  616,
+        "sha256":  "FBC377FAD665BDDC434C20C74CE7C146BF7B930EDF5F8A0D7411DEB36190376A"
+    },
+    {
+        "arquivo":  "soilframe\\README.md",
+        "bytes":  8869,
+        "sha256":  "4971DD17DAE07A83A7C555F7918F3E4644471472963F5A23ACD9D8B174D7ECED"
+    },
+    {
+        "arquivo":  "soilframe\\requirements.txt",
+        "bytes":  427,
+        "sha256":  "004E7454982229BD74F173F1C5DA76D7CC23A95A71C16CB9C78051418832C67B"
+    },
+    {
+        "arquivo":  "soilframe\\setup_env.bat",
+        "bytes":  442,
+        "sha256":  "D16B9F064333CD776D70EB5C5023E9200B275E4493E5007900BBB3661C65934B"
+    },
+    {
+        "arquivo":  "soilframe\\setup_env.sh",
+        "bytes":  492,
+        "sha256":  "90C6BF4ABDF0FC2A67084073535BAA92BF37352C380F5B6EC8802A6DE27DF27F"
+    },
+    {
+        "arquivo":  "soilframe\\soil.drawio",
+        "bytes":  12364,
+        "sha256":  "06002303ED02740E2F4898F99EB121E3195CCD5C65F449C004B5CE19285DD811"
+    },
+    {
+        "arquivo":  "soilframe\\docs\\data_sources.md",
+        "bytes":  1547,
+        "sha256":  "88A9FA52D0B475FB16A7A0DF63DDEF3A210DEECED7B12EA13C5BD1ED1AE03932"
+    },
+    {
+        "arquivo":  "soilframe\\docs\\manual-operacao-v1.docx",
+        "bytes":  379204,
+        "sha256":  "B776A98209BF711FA71D0010DBC66B9FF039705690AC56508245819EF56999AB"
+    },
+    {
+        "arquivo":  "soilframe\\dotenv_files\\.env.example",
+        "bytes":  185,
+        "sha256":  "A32F9A35AE106052D57DAFF2DCE9185799F8A511B01F62D245F4348EC75242D5"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\builtin.py",
+        "bytes":  3079,
+        "sha256":  "67325A4D1F944DE8A372EB4CA2B0AF1B95B118AE7A800BC33BC5CE3AFC66FE8B"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\model_base.py",
+        "bytes":  2116,
+        "sha256":  "10E37774E0D6496B26698E93224404903CDF41C3BACA15653759D7DF5D605C63"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\__init__.py",
+        "bytes":  2849,
+        "sha256":  "F9D6B8DE0154E8BD1BB0943FDC2C6B87E886D6E693290A227DE7C9C04BEB44DA"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\artifacts.py",
+        "bytes":  793,
+        "sha256":  "1439C5DBBA6460A967B7E0D103C9FF736A087EB4FF6026D509C59E481A9AF49C"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\dataset.py",
+        "bytes":  1010,
+        "sha256":  "4788C21DCC14C812D3E0A3ACA4112E0DF01F3A28187D4B0DC42B7BA4AFD35C2A"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\data_sources.py",
+        "bytes":  2890,
+        "sha256":  "38746272B542762E293E36A0CCE11CB019E2ADF0A0F2982EB03E2015C3B94B79"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\metrics.py",
+        "bytes":  711,
+        "sha256":  "157EFD53AD62D6F984340019B588113314B13476008BAABD74B915BBAE31D560"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\model.py",
+        "bytes":  5249,
+        "sha256":  "E3DFC6391221DB8D9577D7746442547372652A9E2D31BE85732E33F7DD81852A"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\model_repository.py",
+        "bytes":  2582,
+        "sha256":  "C981440DA6D51E91186BBB6981576D413DC8678E23904FB8278978FBB830B332"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\pipeline.py",
+        "bytes":  13652,
+        "sha256":  "63F7774FD1815A615215363D9115AC87D1934028D88D12B1FF3ABFD503CB9FEA"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\prediction.py",
+        "bytes":  2202,
+        "sha256":  "17F59C6F743C102899710A197D6E1EC0531670FAECA18D31C022AC60488999C1"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\registry.py",
+        "bytes":  4633,
+        "sha256":  "8C3A34148AAD1D2ED4785ED8359FF09CE705B59226D65520BD07B170D59BFDB2"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\strategy.py",
+        "bytes":  26123,
+        "sha256":  "7A036559F8603C773C05E9CB9AA9802830CC1B27C89E74091A1ADF4D72BB470A"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\tracking.py",
+        "bytes":  10562,
+        "sha256":  "7FAFC3E2C38E1FCE3740C405BA750EE3EF4765C09237CA66F49F0F1CA1BF6653"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\core\\__init__.py",
+        "bytes":  713,
+        "sha256":  "1EDE9C81F94079043C5E6376BCC567F1616B02CACD932419E178D59A35FA887D"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\download\\base.py",
+        "bytes":  2667,
+        "sha256":  "4D0EF6FBC0069BD41B5504BD82875E9C810211D02DA610F9FB994ED5B300A2CC"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\download\\era5land.py",
+        "bytes":  12224,
+        "sha256":  "8C649CD19C6EE5E52528F362534FBE9ACD9FD214EAA91EB11A60B0FF02132B1C"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\download\\sentinel.py",
+        "bytes":  3984,
+        "sha256":  "B6F7172AAF82C17D5E51F3ED1CF7E0222BF78890567F11FEBFAECF2BFCC08612"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\download\\uniforme.py",
+        "bytes":  4049,
+        "sha256":  "2611D63622BB8A67F1D247F1F5EC86AEA7E50FD36A74C4045FB4D779B7FAEE97"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\download\\voronoi.py",
+        "bytes":  22696,
+        "sha256":  "42CECD9DD8E48F313A461C1A6BC9608300994A28178F608C6289671D29A3B5DA"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\download\\__init__.py",
+        "bytes":  744,
+        "sha256":  "9EC34A6CAB8B35C9CA23F3593FB0546A5D60585C927F4373AC8EE65059F01901"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\inputs\\readers.py",
+        "bytes":  1084,
+        "sha256":  "2A08F94375A172050AC8229DB0B646DB5E557AAEC84121F4EAD897CCA65874F5"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\inputs\\__init__.py",
+        "bytes":  58,
+        "sha256":  "673C11365E0DD0F283A67EE445DE8C4190EA76A7F1A09B84F8775F67BFC13870"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\lakehouse\\lakehouse.py",
+        "bytes":  15211,
+        "sha256":  "C7557304E587570679BDE1A85B392F81288297438826C9A7091FD4F4A1A9664D"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\lakehouse\\__init__.py",
+        "bytes":  72,
+        "sha256":  "35C1027EFB965A550922A8B151422CAED4462D4141CD00B0CBF68487286AE40B"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\models\\modelo_autogluon.py",
+        "bytes":  22172,
+        "sha256":  "FB219309ADAC7C37F576CBA6C0E17B2E3295F93C80310B983ABD794273BFBD91"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\models\\modelo_automl.py",
+        "bytes":  16857,
+        "sha256":  "BE2779FB0480F942677B71C130C631A1259898737261F3F6789641620DF98524"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\models\\modelo_et0.py",
+        "bytes":  146,
+        "sha256":  "D753FB5F64AE508BCB9A4CB4478DEC8DBB5E245577DB384FC6E14F10873A77DC"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\models\\modelo_solo.py",
+        "bytes":  3132,
+        "sha256":  "1711A877A85AED9709B696C585CF266965D46C58C82944C671ACF65E17DEC88B"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\models\\modelo_solo_et0.py",
+        "bytes":  155,
+        "sha256":  "E5D84D59A81F68A14572F18B9EAA1011F459582FAA22B98ECE85A801D761130A"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\models\\__init__.py",
+        "bytes":  0,
+        "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_aquacrop.py",
+        "bytes":  1756,
+        "sha256":  "656FB3560162EC07CE30B8E252874E1ACF66160945F3DB70FEE2238C9D7DFD67"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_decenal.py",
+        "bytes":  77,
+        "sha256":  "23D3C6985433720C27C38E92224CF153BDA6891D55954C09DEF29DFB4E952152"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_download.py",
+        "bytes":  2127,
+        "sha256":  "E7978A308A3E39A12AF6CFE16AED466D4A76FB91EA95A805FD6B07E1F3B051DD"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_et0.py",
+        "bytes":  975,
+        "sha256":  "DB028C03500482A3D80DA28EA954C092FD065C233118127211B4F3FF7C49D48B"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_lakehouse.py",
+        "bytes":  6487,
+        "sha256":  "744B8E2E8599BC6BF27A50EA016ADE6E6ADEC01A47F76E5290B04610146E4A92"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_lst.py",
+        "bytes":  69,
+        "sha256":  "E8B8A0D1FC113654D3401A3A325F6DEF7C3AC2E71AD1B774D930635D211CBD9D"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_mensal.py",
+        "bytes":  75,
+        "sha256":  "1551F2BA916CDF06FF675961B504F5D8D19132D10E75328FDBAF8A66D39FECED"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_precipitacao.py",
+        "bytes":  87,
+        "sha256":  "4DB389B0DD878193DBE49CEB04A819ECBEE3CDE59AC10DF6445CA780864390B3"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_sazonal.py",
+        "bytes":  77,
+        "sha256":  "C024502DC61851EA58CCD6417ED27B702717AC45E9C9C6BC5F7B1D98ACB61215"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_solo.py",
+        "bytes":  1010,
+        "sha256":  "F51E7511D882256BF642D11CEB79D5F9B639B5476C3ECCD6D7E564B36B69A8F8"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_solo_et0.py",
+        "bytes":  1558,
+        "sha256":  "A4ED190EDB8EC2C9ED0CBCCE3632DE01EAEC001A7499F69BA79D423FBAC4B176"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\pipeline_swi.py",
+        "bytes":  69,
+        "sha256":  "772B3B34758AFC01BEF79966973FF22B1CEF0DA9986B86BF3CE442B2D10909DA"
+    },
+    {
+        "arquivo":  "soilframe\\soilframe\\pipelines\\__init__.py",
+        "bytes":  0,
+        "sha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+    },
+    {
+        "arquivo":  "soilframe\\soil_analysis\\comparison.py",
+        "bytes":  13266,
+        "sha256":  "BF86743B48E2FF03CF6AF571C220BFB839C117D1EAE843772D03BEB26AC15210"
+    },
+    {
+        "arquivo":  "soilframe\\soil_analysis\\config.py",
+        "bytes":  5447,
+        "sha256":  "1755020AB614CF9FD442FAEDE85D6841AC3E8936F8AC335B6F7AC90DFB18641F"
+    },
+    {
+        "arquivo":  "soilframe\\soil_analysis\\copernicus.py",
+        "bytes":  30323,
+        "sha256":  "F5D30DE1947E0E79E5AD673AF64F2013A3273BEB47B160243484DB26B8502D99"
+    },
+    {
+        "arquivo":  "soilframe\\soil_analysis\\et0.py",
+        "bytes":  15363,
+        "sha256":  "6830DA2E033710935ED25A3EBC272406A346B5BEFB14C9B95197E17448BE2AD6"
+    },
+    {
+        "arquivo":  "soilframe\\soil_analysis\\maps.py",
+        "bytes":  8541,
+        "sha256":  "47D45B5DBED2ED1892E78DD6D63F9904E1329D101B9CDB73B4B3F0D4CF8DA9ED"
+    },
+    {
+        "arquivo":  "soilframe\\soil_analysis\\plotting.py",
+        "bytes":  6563,
+        "sha256":  "03B821503BDF1B24D188910C46B646B22F8387120BDA97C79591D1964093D166"
+    },
+    {
+        "arquivo":  "soilframe\\soil_analysis\\precipitation.py",
+        "bytes":  14228,
+        "sha256":  "161EC4011922114E8E0624AB0443A640DD9BDBA522287FD4B8B3DE1CBCCD4C2C"
+    },
+    {
+        "arquivo":  "soilframe\\soil_analysis\\seasonal.py",
+        "bytes":  9307,
+        "sha256":  "53B445640124D6FAB6B8C09EC982122A0ECA8594DF4B769283CAF8803193A0AB"
+    },
+    {
+        "arquivo":  "soilframe\\soil_analysis\\__init__.py",
+        "bytes":  110,
+        "sha256":  "D1C168480CB3B8E2A98EC6B0FAEB80CF55EC9CB2698EA66B195C3A70C7C8CE69"
+    },
+    {
+        "arquivo":  "soilframe\\tests\\test_architecture.py",
+        "bytes":  5222,
+        "sha256":  "A3C06647540A3130C2BD16A3FBFF2F5FEE17C27ECA3B749264528E9147334488"
+    },
+    {
+        "arquivo":  "soilframe\\tests\\test_automl.py",
+        "bytes":  3328,
+        "sha256":  "A47B453F7883473594A1CD5E4EE33280CE8DA3A478153C3CBCCF6E0D3B1B16CF"
+    },
+    {
+        "arquivo":  "soilframe\\tests\\test_comparison.py",
+        "bytes":  4092,
+        "sha256":  "00DAC187B0E82B5BBF30703FDC1284904C2B2660D429BC63117880A2FE3373BA"
+    },
+    {
+        "arquivo":  "soilframe\\tests\\test_download_voronoi.py",
+        "bytes":  6981,
+        "sha256":  "2BC5168393307D8C9247EFBD8B53B4FD06E4C39548C2C9A96094146EC174E7B1"
+    },
+    {
+        "arquivo":  "soilframe\\tests\\test_et0.py",
+        "bytes":  11395,
+        "sha256":  "4C95118903D588C1291221089258A688B0D1AAF1BCE04C5869E2BA9E1410593C"
+    },
+    {
+        "arquivo":  "soilframe\\tests\\test_framework.py",
+        "bytes":  4527,
+        "sha256":  "748A046098124267403DCCC768772052D942C7CC5AC1CF6FB7CB317826A7901C"
+    },
+    {
+        "arquivo":  "soilframe\\tests\\test_lakehouse.py",
+        "bytes":  2020,
+        "sha256":  "3B466196C187A6BBAE96602A87F0C6C9BD8753B749FFBE958C5C945A29743129"
+    },
+    {
+        "arquivo":  "soilframe\\tests\\test_precipitation.py",
+        "bytes":  4885,
+        "sha256":  "F03D18ED29B39BC06509D7C9A4F27736631A175F5632410262B2058089DA83DC"
+    },
+    {
+        "arquivo":  "soilframe\\tests\\test_seasonal.py",
+        "bytes":  1553,
+        "sha256":  "396B7E4529AE90E9CC86DEB8A6C91B67080E11E9E894703F08ECDB94C7CB88CF"
+    }
+]

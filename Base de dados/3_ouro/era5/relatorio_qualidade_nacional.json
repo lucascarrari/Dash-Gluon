@@ -1,0 +1,19 @@
+{
+  "product": "precipitacao_diaria_nacional",
+  "model": "era5",
+  "period": "2024-10-08/2026-10-07",
+  "locations": 27,
+  "states": 27,
+  "regions": 5,
+  "rows": 19710,
+  "expected_rows": 19710,
+  "valid_values": 19710,
+  "null_values": 0,
+  "duplicate_location_dates": 0,
+  "unit": "mm/day",
+  "frequency": "daily",
+  "validation_status": "complete_for_27_points_and_27_states",
+  "timezone": "GMT",
+  "bronze_manifest": "1_bronze/era5/manifest.json",
+  "spatial_scope": "Discrete named points only."
+}

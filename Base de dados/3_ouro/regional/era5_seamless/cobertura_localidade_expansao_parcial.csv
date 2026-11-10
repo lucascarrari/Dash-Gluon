@@ -1,0 +1,4 @@
+"location_id";"location_name";"state";"macro_region";"rows";"valid_rows";"null_rows";"first_date";"last_date";"api_latitude";"api_longitude"
+"BR_BA_BARREIRAS";"Barreiras (MATOPIBA)";"BA";"Nordeste";"730";"730";"0";"2024-10-08";"2026-10-07";"-12,199997";"-45,0"
+"BR_MG_MONTES_CLAROS";"Montes Claros (Norte de MG)";"MG";"Sudeste";"730";"730";"0";"2024-10-08";"2026-10-07";"-16,699997";"-43,899994"
+"BR_PE_PETROLINA";"Petrolina (Irrigação São Francisco)";"PE";"Nordeste";"730";"730";"0";"2024-10-08";"2026-10-07";"-9,400002";"-40,5"
